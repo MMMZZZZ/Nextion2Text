@@ -218,6 +218,11 @@ class component:
                 "maxval": "Upper End",
             },
         },
+        -1: {
+            "typeName": "Unknown",
+            "events": dict(),
+            "properties": dict(),
+        }
     }
 
     def __init__(self, componentStr):
@@ -342,6 +347,8 @@ class component:
 
     def loadType(self):
         self.typeId = ord(self.getProperty("type"))
+        if self.typeId not in self.types:
+            self.typeId = -1
         self.typeStr = self.types[self.typeId]["typeName"]
 
     def loadEvents(self):
@@ -457,8 +464,8 @@ for i,page in enumerate(hmi.pages):
         lines = pageText.count("\n")
         totalCodeLines += lines
         print(page.__repr__())
-        print(" ", lines, "Code Lines")
+        print(" ", lines, "Lines")
         f.write(pageText)
-print("Total", totalCodeLines, "Code Lines")
+print("Total", totalCodeLines, "Lines")
 
 print("done")
