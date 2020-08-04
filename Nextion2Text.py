@@ -1,5 +1,6 @@
 from string import whitespace
 import os
+import sys
 
 class indentList(list):
     def __init__(self, *args, **kwargs):
@@ -445,10 +446,16 @@ class HMI:
         return "work in progress"
 
 
-hmiPath = r"D:/Dokumente/DRSSTC/Syntherrupter/Syntherrupter_Nextion/"
-hmiFile = r"Syntherrupter_Nextion.hmi"
-hmiTextFolder = "Syntherrupter_Nextion_Code"
-hmiTextFileExt = ".txt"
+
+### Here starts the script part.
+if len(sys.argv) != 5:
+    print("Arguments: ", sys.argv)
+    raise ValueError("Exactly 4 arguments required: Working directory, HMI file name, output subfolder name, output text file extension.")
+
+hmiPath = sys.argv[1]
+hmiFile = sys.argv[2]
+hmiTextFolder = sys.argv[3]
+hmiTextFileExt = sys.argv[4]
 
 with open(os.path.join(hmiPath, hmiFile), "rb") as f:
     hmi = HMI(f)
