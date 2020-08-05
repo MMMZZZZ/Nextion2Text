@@ -1,6 +1,7 @@
 from string import whitespace
 import os
 import sys
+import struct
 
 class indentList(list):
     def __init__(self, *args, **kwargs):
@@ -413,34 +414,63 @@ class component:
                 if "val" in self.properties:
                     self.properties.pop("val")
 
+class PageHeader:
+    #crc[4], datasize[4], datainfoaddr[4], numberobj[4], password[4], locked[1], ?[1], version[1], ?[1], name[16], reserved[16]
+    def __init__(self, headerData):
+        data = struct.unpack("IIIII?bbb16s16b")
+        self.crc          = data[0]
+        self.size         = data[1]
+        self.contentStart = data[2]
+        self.contentCount = data[3]
+        self.password     = data[4]
+        self.locked       = data[5]
+        self.fileVersion  = data[7]
+        self.name         = data[9]
+
+
+class HMIHeaderObj:
+    def __init__(self, objData):
+        data = struct.unpack("16sII?bbb", objData)
+        self.name    = data[0].decode("ansi").rstrip("\x00")
+        self.start   = data[1]
+        self.length  = data[2]
+        self.deleted = data[3]
+    def __len__(self):
+        return self.length
+    def __bool__(self):
+        return not self.deleted
+    def __repr__(self):
+        return self.name
+
+class HMIHeader:
+    def __init__(self, headerData, keepDeletedComponets = False):
+        self.objectCount = struct.unpack("I", headerData[:4])[0]
+        self.objects = list()
+        index = 4
+        for i in range(self.objectCount):
+            obj = HMIHeaderObj(headerData[index:index+28])
+            if keepDeletedComponets or obj:
+                self.objects.append(obj)
+            index += 28
+        self.objectCount = len(self.objects)
+    def __len__(self):
+        return self.objectCount
 
 class HMI:
-    def __init__(self, HMIFile):
-        s = HMIFile.read().decode("ansi")
-        allComponentStrs = s.split("\x00\x00\x00att")
-        allComponentStrs = ["att" + e for i,e in enumerate(allComponentStrs) if i > 0]
+    def __init__(self, HMIFilePath, keepDeletedComponents = False):
+        objectList = list()
+        with open(HMIFilePath, "rb") as HMIFile:
+            self.raw = HMIFile.read()
+        self.content = HMIHeader(self.raw[:512*1024], keepDeletedComponents)
         self.pages = []
-        for cs in allComponentStrs:
-            comp = component(cs)
+        for obj in self.content.objects:
+            end = obj.start + len(obj)
+            s = self.raw[obj.start:end].decode("ansi")
+            comp = component(s)
             if comp.typeStr == "Page":
                 self.pages.append(comp)
             else:
                 self.pages[-1].components.append(comp)
-        """
-        For some reason pages and components can be found multiple times, each time a different version.
-        It seems like the last version is the right one. The following code 
-        kicks all versions except for the last one from the list of all pages. 
-        """
-        noDuplicates = dict()
-        for i, page in enumerate(self.pages):
-            noDuplicates[page.objname] = i
-        self.pages = [self.pages[i] for i in noDuplicates.values()]
-        for page in self.pages:
-            noDuplicates = dict()
-            for i, comp in enumerate(page.components):
-                noDuplicates[comp.objname] = i
-            page.components = [page.components[i] for i in noDuplicates.values()]
-            page.sortComponents()
 
     def text(self, indent=4, emptyLinesLimit=1):
         return "work in progress"
@@ -457,8 +487,7 @@ hmiFile = sys.argv[2]
 hmiTextFolder = sys.argv[3]
 hmiTextFileExt = sys.argv[4]
 
-with open(os.path.join(hmiPath, hmiFile), "rb") as f:
-    hmi = HMI(f)
+hmi = HMI(os.path.join(hmiPath, hmiFile))
 
 hmiTextFolder = os.path.join(hmiPath, hmiTextFolder)
 if not os.path.exists(hmiTextFolder):
