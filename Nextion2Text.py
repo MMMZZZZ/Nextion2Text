@@ -2,8 +2,9 @@ from string import whitespace
 import os
 import sys
 import struct
+from typing import List
 
-class indentList(list):
+class IndentList(list):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.indent = 4
@@ -30,7 +31,7 @@ class indentList(list):
         self.appendIndent(newStr)
 
 
-class component:
+class Component:
     types = {
         121: {
             "typeName": "Page",
@@ -244,7 +245,7 @@ class component:
         return self.typeStr + " " + self.objname
 
     def sortCriteria(self, comp):
-        comp: component
+        comp: Component
         return [v["typeName"] for v in self.types.values()].index(comp.typeStr)
 
     def sortComponents(self):
@@ -255,7 +256,7 @@ class component:
         return "".join(self.textLines(indentLevel, indent, recursive, emptyLinesLimit))
 
     def textLines(self, indentLevel=0, indent=4, recursive=True, emptyLinesLimit=1):
-        result = indentList()
+        result = IndentList()
         result.indentStr = " "
         result.indentLevel = indentLevel
         result.indent = indent
@@ -298,7 +299,7 @@ class component:
             result.appendIndentLine("Components")
             result.indentLevel += 1
             for comp in self.components:
-                comp: component
+                comp: Component
                 if recursive:
                     compTextLines = comp.textLines(0, result.indent, True, result.emptyLinesLimit)
                     for line in compTextLines:
@@ -414,56 +415,135 @@ class component:
                 if "val" in self.properties:
                     self.properties.pop("val")
 
-class PageHeader:
+class Header:
+    _headerFormat = ""
+
+    def __init__(self, raw, start = 0):
+        self._raw = raw
+        self._headerStart = start
+        self.headerSize = self.__getHeaderSize()
+        self._processData(self.__getHeaderData())
+
+    def __getHeaderData(self):
+        return struct.unpack(self._headerFormat, self._raw[self._headerStart:self._headerStart+self.headerSize])
+
+    def __getHeaderSize(self):
+        return struct.calcsize(self._headerFormat)
+
+class PageContentHeader(Header):
+    _headerFormat = "III"
+
+    def _processData(self, data):
+        self.startOffset : int
+        self.size  : int
+        self.startOffset = data[0]
+        self.size  = data[1]
+
+    def __repr__(self):
+        return "Header of " + self.name
+
+class PageHeader(Header):
+    _headerFormat = "IIIII?bbb16s16b"
+
     #crc[4], datasize[4], datainfoaddr[4], numberobj[4], password[4], locked[1], ?[1], version[1], ?[1], name[16], reserved[16]
-    def __init__(self, headerData):
-        data = struct.unpack("IIIII?bbb16s16b")
+    def _processData(self, data):
+        self.crc          : int
+        self.size         : int
+        self.start        : int
+        self.count        : int
+        self.password     : int
+        self.locked       : bool
+        self.fileVersion  : int
+        self.name         : str
+        self.components   : List[PageContentHeader] = list()
         self.crc          = data[0]
-        self.size         = data[1]
-        self.contentStart = data[2]
-        self.contentCount = data[3]
+        self.size        = data[1]
+        if data[2] != self.headerSize:
+            ValueError("Header Size Mismatch. Expected: {0}, got: {1}".format(self.headerSize, data[2]))
+        self.count        = data[3]
         self.password     = data[4]
         self.locked       = data[5]
         self.fileVersion  = data[7]
-        self.name         = data[9]
+        self.name         = data[9].decode("ansi").rstrip("\x00")
+        index = self._headerStart + self.headerSize
+        for i in range(self.count):
+            obj = PageContentHeader(self._raw, index)
+            self.components.append(obj)
+            index += obj.headerSize
 
 
-class HMIHeaderObj:
-    def __init__(self, objData):
-        data = struct.unpack("16sII?bbb", objData)
+class HMIContentHeader(Header):
+    _headerFormat = "16sII?bbb"
+
+    def _processData(self, data):
+        self.name    : str
+        self.start   : int
+        self.size    : int
+        self.deleted : bool
         self.name    = data[0].decode("ansi").rstrip("\x00")
         self.start   = data[1]
-        self.length  = data[2]
+        self.size    = data[2]
         self.deleted = data[3]
-    def __len__(self):
-        return self.length
+
+    def isPage(self):
+        return self.name.endswith(".pa")
+
+    def isImage(self):
+        return self.name.endswith(".i")
+
+    def isImageSource(self):
+        return self.name.endswith(".is")
+
     def __bool__(self):
         return not self.deleted
-    def __repr__(self):
-        return self.name
 
-class HMIHeader:
-    def __init__(self, headerData, keepDeletedComponets = False):
-        self.objectCount = struct.unpack("I", headerData[:4])[0]
-        self.objects = list()
-        index = 4
-        for i in range(self.objectCount):
-            obj = HMIHeaderObj(headerData[index:index+28])
-            if keepDeletedComponets or obj:
-                self.objects.append(obj)
-            index += 28
-        self.objectCount = len(self.objects)
-    def __len__(self):
-        return self.objectCount
+    def __repr__(self):
+        return "Header of " + self.name
+
+class HMIHeader(Header):
+    _headerFormat = "I"
+
+    def _processData(self, data):
+        self.count   : int
+        self.content : List[HMIContentHeader] = list()
+        self.count = data[0]
+        index = self._headerStart + self.headerSize
+        for i in range(self.count):
+            obj = HMIContentHeader(self._raw, index)
+            if obj:
+                self.content.append(obj)
+            index += obj.headerSize
+        self.count = len(self.content)
+
+class Page:
+    def __init__(self, raw, start: int, size: int):
+        self.__raw = raw
+        self.start = start
+        self.size = size
+        components : List[Component] = list()
+
+        self.header = PageHeader(self.__raw, self.start)
+
+        for comp in self.header.components:
+            start = self.start + self.header.headerSize + comp.startOffset
+            end = start + comp.size
+            compStr = self.__raw[start:end].decode("ansi")
+            components.append(Component(compStr))
+
+        self.self = components.pop(0)
+        self.self.components = components
 
 class HMI:
-    def __init__(self, HMIFilePath, keepDeletedComponents = False):
+    def __init__(self, HMIFilePath):
         objectList = list()
         with open(HMIFilePath, "rb") as HMIFile:
             self.raw = HMIFile.read()
-        self.content = HMIHeader(self.raw[:512*1024], keepDeletedComponents)
+        self.header = HMIHeader(self.raw)
         self.pages = []
-        for obj in self.content.objects:
+        for obj in self.header.content:
+            if obj.isPage():
+                self.pages.append(Page(self.raw, obj.start, obj.size))
+            """
             end = obj.start + len(obj)
             s = self.raw[obj.start:end].decode("ansi")
             comp = component(s)
@@ -471,6 +551,7 @@ class HMI:
                 self.pages.append(comp)
             else:
                 self.pages[-1].components.append(comp)
+            """
 
     def text(self, indent=4, emptyLinesLimit=1):
         return "work in progress"
@@ -495,11 +576,11 @@ if not os.path.exists(hmiTextFolder):
 
 totalCodeLines = 0
 for i,page in enumerate(hmi.pages):
-    with open(os.path.join(hmiTextFolder, page.objname + hmiTextFileExt), "w") as f:
-        pageText = page.text(emptyLinesLimit=1)
+    with open(os.path.join(hmiTextFolder, page.self.objname + hmiTextFileExt), "w") as f:
+        pageText = page.self.text(emptyLinesLimit=1)
         lines = pageText.count("\n")
         totalCodeLines += lines
-        print(page.__repr__())
+        print(page.self.__repr__())
         print(" ", lines, "Lines")
         f.write(pageText)
 print("Total", totalCodeLines, "Lines")
