@@ -31,7 +31,7 @@ Page User_Settings
             user2Duty.val=u2Duty.val
             //
             // Each user can only see the settings of himself and "lower" users. Only user 2 can edit them.
-            if(tUser.txt!=u2Name.txt)
+            if(User_Settings.userNum.val!=2)
             {
                 vis tU2Name,0
                 vis tU2Code,0
@@ -41,7 +41,7 @@ Page User_Settings
                 vis tus2,0
                 vis tHz2,0
                 vis tPerc2,0
-                if(tUser.txt!=u1Name.txt)
+                if(User_Settings.userNum.val!=1)
                 {
                     vis tU1Name,0
                     vis tU1Code,0
@@ -64,7 +64,7 @@ Page User_Settings
                     vis b9,0
                     vis bClear,0
                     vis bOK,0
-                    if(tUser.txt!=u0Name.txt)
+                    if(User_Settings.userNum.val!=0)
                     {
                         vis tU0Name,0
                         vis tU0Code,0
@@ -87,13 +87,13 @@ Page User_Settings
             //
             // Right border of the table
             sys0=0
-            if(tUser.txt==tU0Name.txt)
+            if(User_Settings.userNum.val==0)
             {
                 sys0=362
-            }else if(tUser.txt==tU1Name.txt)
+            }else if(User_Settings.userNum.val==1)
             {
                 sys0=577
-            }else if(tUser.txt==tU2Name.txt)
+            }else if(User_Settings.userNum.val==2)
             {
                 sys0=785
             }

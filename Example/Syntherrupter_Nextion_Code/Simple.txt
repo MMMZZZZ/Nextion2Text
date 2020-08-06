@@ -260,6 +260,9 @@ Page Simple
                     fSliderOutput.val=userOnLimit.val
                     fSlider.val=sOn.val
                     click fSlider,1 // final Ontime value
+                    // Round to multiple of five
+                    fSlider.val/=5
+                    fSlider.val*=5
                     sys1=nBPS.val*fSlider.val/1000 // resulting duty cycle
                     if(sys1<=userDutyLimit.val)
                     {
@@ -271,6 +274,9 @@ Page Simple
                             fSliderOutput.val=userDutyLimit.val
                             fSlider.val=nDuty.val
                             click fSlider,0
+                            // Round to multiple of five
+                            fSlider.val/=5
+                            fSlider.val*=5
                             sDuty.val=fSlider.val
                             newData.val=1
                         }
@@ -338,6 +344,9 @@ Page Simple
                     fSliderOutput.val=userBPSLimit.val
                     fSlider.val=sBPS.val
                     click fSlider,1
+                    // Round to multiple of five
+                    fSlider.val/=5
+                    fSlider.val*=5
                     temp.val=fSlider.val // final BPS value
                     // Depending on whether ontime or duty was set, calculate the resulting value for the other one and check if it's legal.
                     if(keepOntime.val>0)
@@ -350,6 +359,9 @@ Page Simple
                             fSliderOutput.val=userDutyLimit.val
                             fSlider.val=nDuty.val
                             click fSlider,0
+                            // Round to multiple of five
+                            fSlider.val/=5
+                            fSlider.val*=5
                             sDuty.val=fSlider.val
                         }else
                         {
@@ -365,6 +377,9 @@ Page Simple
                             fSliderOutput.val=userOnLimit.val
                             fSlider.val=nOn.val
                             click fSlider,0
+                            // Round to multiple of five
+                            fSlider.val/=5
+                            fSlider.val*=5
                             sOn.val=fSlider.val
                         }else
                         {
@@ -440,6 +455,9 @@ Page Simple
                     fSliderOutput.val=userDutyLimit.val
                     fSlider.val=sDuty.val
                     click fSlider,1
+                    // Round to multiple of five
+                    fSlider.val/=5
+                    fSlider.val*=5
                     sys1=fSlider.val*1000/nBPS.val // Resulting Ontime
                     if(sys1<=userOnLimit.val)
                     {
@@ -452,6 +470,9 @@ Page Simple
                             fSliderOutput.val=userOnLimit.val
                             fSlider.val=nOn.val
                             click fSlider,0
+                            // Round to multiple of five
+                            fSlider.val/=5
+                            fSlider.val*=5
                             sOn.val=fSlider.val
                         }
                     }

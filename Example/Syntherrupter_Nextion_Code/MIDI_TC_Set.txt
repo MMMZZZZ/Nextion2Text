@@ -923,8 +923,6 @@ Page MIDI_TC_Set
                 Touch Press Event
                     // Save current state and send it to the microcontroller
                     click fStore,1
-                
-                Touch Release Event
                     // Set previous coil
                     if(coilNum.val>1)
                     {
@@ -933,6 +931,8 @@ Page MIDI_TC_Set
                     // Reload page for previous coil
                     page MIDI_TC_Set
                 
+                Touch Release Event
+                    
         Button bNext
             Properties
                 Scope      : Local
@@ -943,8 +943,6 @@ Page MIDI_TC_Set
                 Touch Press Event
                     // Save current state and send it to the microcontroller
                     click fStore,1
-                
-                Touch Release Event
                     // Set next coil
                     if(coilNum.val<TC_Settings.maxCoilCount.val)
                     {
@@ -953,6 +951,8 @@ Page MIDI_TC_Set
                     // Reload page for previous coil
                     page MIDI_TC_Set
                 
+                Touch Release Event
+                    
         Number fStore
             Properties
                 Scope        : Local

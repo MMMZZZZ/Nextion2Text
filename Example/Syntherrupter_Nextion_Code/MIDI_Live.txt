@@ -276,16 +276,22 @@ Page MIDI_Live
                 Scope           : Local
                 Initial Position: 0
                 Lower End       : 0
-                Upper End       : 439
+                Upper End       : 366
             
             Events
                 Touch Press Event
+                    // Slider minval = 0
+                    // Slider maxval = SliderWidth - CursorWIdth - 1
+                    // => Slider resolution equals slider "pixel" resolution
                     fSliderInput.val=sOn.maxval
                     fSliderOutput.val=userOnLimit.val
                 
                 Touch Release Event
                     fSlider.val=sOn.val
                     click fSlider,1
+                    // Round down to multiples of 5
+                    fSlider.val/=5
+                    fSlider.val*=5
                     if(nOn.val!=fSlider.val)
                     {
                         newData.val=1
@@ -313,23 +319,10 @@ Page MIDI_Live
                         click bApply,0
                     }
                 
-        Text tOn
-            Properties
-                Scope       : Local
-                Initial Text: "Max Ontime:"
-                Max. length : 20
-            
-            Events
-                Touch Press Event
-                    // Make this object "transparent" for clicks and click background.
-                    click MIDI_Live,1
-                
-                Touch Release Event
-                    
         Number nOn
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 9999
             
             Events
                 Touch Press Event
@@ -343,7 +336,7 @@ Page MIDI_Live
                 Scope           : Local
                 Initial Position: 0
                 Lower End       : 0
-                Upper End       : 439
+                Upper End       : 366
             
             Events
                 Touch Press Event
@@ -353,6 +346,9 @@ Page MIDI_Live
                 Touch Release Event
                     fSlider.val=sDuty.val
                     click fSlider,1
+                    // Round down to multiples of 5
+                    fSlider.val/=5
+                    fSlider.val*=5
                     if(nDuty.val!=fSlider.val)
                     {
                         newData.val=1
@@ -383,7 +379,7 @@ Page MIDI_Live
         Text tDuty
             Properties
                 Scope       : Local
-                Initial Text: "Max Duty:"
+                Initial Text: "Note Duty:"
                 Max. length : 20
             
             Events
@@ -1270,6 +1266,19 @@ Page MIDI_Live
                         sys1=sys1>>2
                     }
                     fSqrt.val=sys0
+                
+                Touch Release Event
+                    
+        Text tOn
+            Properties
+                Scope       : Local
+                Initial Text: "Note Ontime:"
+                Max. length : 20
+            
+            Events
+                Touch Press Event
+                    // Make this object "transparent" for clicks and click background.
+                    click MIDI_Live,1
                 
                 Touch Release Event
                     

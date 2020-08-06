@@ -24,13 +24,13 @@ Page MIDI_Chn_Set
             //
             // Load values
             sys0=NRPData.val
-            nNumCoarse.val=sys0&0xff
-            sys0=sys0>>8
-            nNumFine.val=sys0&0xff
+            nDataFine.val=sys0&0xff
             sys0=sys0>>8
             nDataCoarse.val=sys0&0xff
             sys0=sys0>>8
-            nDataFine.val=sys0&0xff
+            nNumFine.val=sys0&0xff
+            sys0=sys0>>8
+            nNumCoarse.val=sys0&0xff
             //
             sys0=MIDIData.val
             nStatus.val=sys0&0xff
@@ -42,6 +42,7 @@ Page MIDI_Chn_Set
             {
                 if(nStatus.val<0xf0)
                 {
+                    nStatus.val=nStatus.val&0xf0
                     nStatus.val+=chnNum.val
                 }
             }
@@ -252,8 +253,6 @@ Page MIDI_Chn_Set
                 Touch Press Event
                     // Save current state and send it to the microcontroller
                     click fStore,1
-                
-                Touch Release Event
                     // Set previous coil
                     if(chnNum.val>0)
                     {
@@ -262,6 +261,8 @@ Page MIDI_Chn_Set
                     // Reload page for previous coil
                     page MIDI_Chn_Set
                 
+                Touch Release Event
+                    
         Button bNext
             Properties
                 Scope      : Local
@@ -272,8 +273,6 @@ Page MIDI_Chn_Set
                 Touch Press Event
                     // Save current state and send it to the microcontroller
                     click fStore,1
-                
-                Touch Release Event
                     // Set next coil
                     if(chnNum.val<15)
                     {
@@ -282,6 +281,8 @@ Page MIDI_Chn_Set
                     // Reload page for previous coil
                     page MIDI_Chn_Set
                 
+                Touch Release Event
+                    
         Number fStore
             Properties
                 Scope        : Local
@@ -317,13 +318,13 @@ Page MIDI_Chn_Set
                         sys0+=chnNum.val
                         //
                         sys1=0
-                        sys1+=nDataFine.val
-                        sys1=sys1<<8
-                        sys1+=nDataCoarse.val
+                        sys1+=nNumCoarse.val
                         sys1=sys1<<8
                         sys1+=nNumFine.val
                         sys1=sys1<<8
-                        sys1+=nNumCoarse.val
+                        sys1+=nDataCoarse.val
+                        sys1=sys1<<8
+                        sys1+=nDataFine.val
                         // Send data only if it was modified or if the channel changed.
                         if(NRPData.val!=sys1)
                         {
@@ -625,7 +626,7 @@ Page MIDI_Chn_Set
                     // Status byte must be between 128 and 255. A value of 127 means no command will be send. Data bytes must be between 0 and 127
                     if(nStatus.val<128)
                     {
-                        nStatus.val=chnNum.val
+                        nStatus.val=0
                     }else if(nStatus.val>255)
                     {
                         nStatus.val=255
