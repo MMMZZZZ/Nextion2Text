@@ -31,28 +31,6 @@ Page Settings
         Page Exit Event
             
     Components
-        Text tTitle
-            Properties
-                Scope       : Local
-                Initial Text: "Settings"
-                Max. length : 22
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    
-        Text tUser
-            Properties
-                Scope       : Local
-                Initial Text: " Guest"
-                Max. length : 32
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    
         Button bCoilSettings
             Properties
                 Scope      : Local
@@ -65,18 +43,17 @@ Page Settings
                 Touch Release Event
                     page TC_Settings
                 
-        Button bGeneral
+        Text tTitle
             Properties
-                Scope      : Local
-                Caption    : "Other Settings"
-                Max. length: 20
+                Scope       : Local
+                Initial Text: "Settings"
+                Max. length : 22
             
             Events
                 Touch Press Event
                     
                 Touch Release Event
-                    page Other_Settings
-                
+                    
         Button bReturn
             Properties
                 Scope      : Local
@@ -91,6 +68,17 @@ Page Settings
                     prints "mex",0
                     page Menu
                 
+        Text tUser
+            Properties
+                Scope       : Local
+                Initial Text: " Guest"
+                Max. length : 32
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
         Button bUSBFWUpdate
             Properties
                 Scope      : Local
@@ -102,6 +90,18 @@ Page Settings
                     
                 Touch Release Event
                     page USB_FW_Update
+                
+        Button bGeneral
+            Properties
+                Scope      : Local
+                Caption    : "Other Settings"
+                Max. length: 20
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    page Other_Settings
                 
         Button bUsers
             Properties

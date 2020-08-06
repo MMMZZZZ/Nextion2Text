@@ -76,60 +76,6 @@ Page Keyboard
         Page Exit Event
             
     Components
-        Variable firstClick
-            Properties
-                Scope         : Local
-                Type          : int32
-                Initial Value : 1
-            
-        Variable origin
-            Properties
-                Scope         : Global
-                Type          : int32
-                Initial Value : 0
-            
-        Variable sComp
-            Properties
-                Scope         : Global
-                Type          : String
-                Initial String: "0"
-                Max. length   : 20
-            
-        Variable sTitleStart
-            Properties
-                Scope         : Local
-                Type          : String
-                Initial String: "Change "
-                Max. length   : 30
-            
-        Variable target
-            Properties
-                Scope         : Global
-                Type          : int32
-                Initial Value : 0
-            
-        Text newVal
-            Properties
-                Scope       : Local
-                Initial Text: "42"
-                Max. length : 32
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    
-        Text tNewVal
-            Properties
-                Scope       : Local
-                Initial Text: "New Value:"
-                Max. length : 20
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    
         Text tTitle
             Properties
                 Scope       : Local
@@ -141,10 +87,79 @@ Page Keyboard
                     
                 Touch Release Event
                     
+        Button bReturn
+            Properties
+                Scope      : Local
+                Caption    : "Return"
+                Max. length: 10
+            
+            Events
+                Touch Press Event
+                    if(newVal.txt!="")
+                    {
+                        if(p[origin.val].b[target.val].sta==0)
+                        {
+                            // Integer variable
+                            covx newVal.txt,p[origin.val].b[target.val].val,0,0
+                        }else
+                        {
+                            p[origin.val].b[target.val].txt=newVal.txt
+                        }
+                    }
+                
+                Touch Release Event
+                    if(newVal.txt!="")
+                    {
+                        // Go back to origin page.
+                        page origin.val
+                    }
+                
         Text tUser
             Properties
                 Scope       : Local
                 Initial Text: " Guest"
+                Max. length : 32
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Variable origin
+            Properties
+                Scope         : Global
+                Type          : int32
+                Initial Value : 0
+            
+        Variable sTitleStart
+            Properties
+                Scope         : Local
+                Type          : String
+                Initial String: "Change "
+                Max. length   : 30
+            
+        Variable sComp
+            Properties
+                Scope         : Global
+                Type          : String
+                Initial String: "0"
+                Max. length   : 20
+            
+        Text tNewVal
+            Properties
+                Scope       : Local
+                Initial Text: "New Value:"
+                Max. length : 20
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Text newVal
+            Properties
+                Scope       : Local
+                Initial Text: "42"
                 Max. length : 32
             
             Events
@@ -322,10 +337,10 @@ Page Keyboard
                     }
                     newVal.txt+=b9.txt
                 
-        Button bA
+        Button bP
             Properties
                 Scope      : Local
-                Caption    : "a"
+                Caption    : "p"
                 Max. length: 1
             
             Events
@@ -337,33 +352,14 @@ Page Keyboard
                         firstClick.val=0
                         newVal.txt=""
                     }
-                    newVal.txt+=bA.txt
+                    newVal.txt+=bP.txt
                     btShift.val=0
                     click btShift,0
                 
-        Button bAE
+        Button bQ
             Properties
                 Scope      : Local
-                Caption    : "ä"
-                Max. length: 10
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bAE.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bArr
-            Properties
-                Scope      : Local
-                Caption    : "<"
+                Caption    : "q"
                 Max. length: 1
             
             Events
@@ -375,14 +371,14 @@ Page Keyboard
                         firstClick.val=0
                         newVal.txt=""
                     }
-                    newVal.txt+=bArr.txt
+                    newVal.txt+=bQ.txt
                     btShift.val=0
                     click btShift,0
                 
-        Button bB
+        Button bW
             Properties
                 Scope      : Local
-                Caption    : "b"
+                Caption    : "w"
                 Max. length: 1
             
             Events
@@ -394,118 +390,7 @@ Page Keyboard
                         firstClick.val=0
                         newVal.txt=""
                     }
-                    newVal.txt+=bB.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bBack
-            Properties
-                Scope      : Local
-                Caption    : "<-"
-                Max. length: 2
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                    }
-                    newVal.txt-=1
-                
-        Button bBar
-            Properties
-                Scope      : Local
-                Caption    : "-"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bBar.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bC
-            Properties
-                Scope      : Local
-                Caption    : "c"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bC.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bCom
-            Properties
-                Scope      : Local
-                Caption    : ","
-                Max. length: 10
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bCom.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bD
-            Properties
-                Scope      : Local
-                Caption    : "d"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bD.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bDot
-            Properties
-                Scope      : Local
-                Caption    : "."
-                Max. length: 10
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bDot.txt
+                    newVal.txt+=bW.txt
                     btShift.val=0
                     click btShift,0
                 
@@ -525,6 +410,177 @@ Page Keyboard
                         newVal.txt=""
                     }
                     newVal.txt+=bE.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bR
+            Properties
+                Scope      : Local
+                Caption    : "r"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bR.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bT
+            Properties
+                Scope      : Local
+                Caption    : "t"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bT.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bZ
+            Properties
+                Scope      : Local
+                Caption    : "z"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bZ.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bU
+            Properties
+                Scope      : Local
+                Caption    : "u"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bU.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bI
+            Properties
+                Scope      : Local
+                Caption    : "i"
+                Max. length: 10
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bI.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bO
+            Properties
+                Scope      : Local
+                Caption    : "o"
+                Max. length: 10
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bO.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bA
+            Properties
+                Scope      : Local
+                Caption    : "a"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bA.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bS
+            Properties
+                Scope      : Local
+                Caption    : "s"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bS.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bD
+            Properties
+                Scope      : Local
+                Caption    : "d"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bD.txt
                     btShift.val=0
                     click btShift,0
                 
@@ -585,25 +641,6 @@ Page Keyboard
                     btShift.val=0
                     click btShift,0
                 
-        Button bI
-            Properties
-                Scope      : Local
-                Caption    : "i"
-                Max. length: 10
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bI.txt
-                    btShift.val=0
-                    click btShift,0
-                
         Button bJ
             Properties
                 Scope      : Local
@@ -661,10 +698,10 @@ Page Keyboard
                     btShift.val=0
                     click btShift,0
                 
-        Button bM
+        Button bBar
             Properties
                 Scope      : Local
-                Caption    : "m"
+                Caption    : "-"
                 Max. length: 1
             
             Events
@@ -676,338 +713,7 @@ Page Keyboard
                         firstClick.val=0
                         newVal.txt=""
                     }
-                    newVal.txt+=bM.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bN
-            Properties
-                Scope      : Local
-                Caption    : "n"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bN.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bO
-            Properties
-                Scope      : Local
-                Caption    : "o"
-                Max. length: 10
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bO.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bOE
-            Properties
-                Scope      : Local
-                Caption    : "ö"
-                Max. length: 10
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bOE.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bP
-            Properties
-                Scope      : Local
-                Caption    : "p"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bP.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bPlus
-            Properties
-                Scope      : Local
-                Caption    : "+"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bPlus.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bQ
-            Properties
-                Scope      : Local
-                Caption    : "q"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bQ.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bQuest
-            Properties
-                Scope      : Local
-                Caption    : "?"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bQuest.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bR
-            Properties
-                Scope      : Local
-                Caption    : "r"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bR.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bReturn
-            Properties
-                Scope      : Local
-                Caption    : "Return"
-                Max. length: 10
-            
-            Events
-                Touch Press Event
-                    if(newVal.txt!="")
-                    {
-                        if(p[origin.val].b[target.val].sta==0)
-                        {
-                            // Integer variable
-                            covx newVal.txt,p[origin.val].b[target.val].val,0,0
-                        }else
-                        {
-                            p[origin.val].b[target.val].txt=newVal.txt
-                        }
-                    }
-                
-                Touch Release Event
-                    if(newVal.txt!="")
-                    {
-                        // Go back to origin page.
-                        page origin.val
-                    }
-                
-        Button bS
-            Properties
-                Scope      : Local
-                Caption    : "s"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bS.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bSpace
-            Properties
-                Scope      : Local
-                Caption    : "SPACE"
-                Max. length: 6
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=" "
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bT
-            Properties
-                Scope      : Local
-                Caption    : "t"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bT.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bU
-            Properties
-                Scope      : Local
-                Caption    : "u"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bU.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bUE
-            Properties
-                Scope      : Local
-                Caption    : "ü"
-                Max. length: 10
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bUE.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bV
-            Properties
-                Scope      : Local
-                Caption    : "v"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bV.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bW
-            Properties
-                Scope      : Local
-                Caption    : "w"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bW.txt
-                    btShift.val=0
-                    click btShift,0
-                
-        Button bX
-            Properties
-                Scope      : Local
-                Caption    : "x"
-                Max. length: 1
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    if(firstClick.val==1)
-                    {
-                        firstClick.val=0
-                        newVal.txt=""
-                    }
-                    newVal.txt+=bX.txt
+                    newVal.txt+=bBar.txt
                     btShift.val=0
                     click btShift,0
                 
@@ -1030,10 +736,10 @@ Page Keyboard
                     btShift.val=0
                     click btShift,0
                 
-        Button bZ
+        Button bX
             Properties
                 Scope      : Local
-                Caption    : "z"
+                Caption    : "x"
                 Max. length: 1
             
             Events
@@ -1045,10 +751,184 @@ Page Keyboard
                         firstClick.val=0
                         newVal.txt=""
                     }
-                    newVal.txt+=bZ.txt
+                    newVal.txt+=bX.txt
                     btShift.val=0
                     click btShift,0
                 
+        Button bC
+            Properties
+                Scope      : Local
+                Caption    : "c"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bC.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bV
+            Properties
+                Scope      : Local
+                Caption    : "v"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bV.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bB
+            Properties
+                Scope      : Local
+                Caption    : "b"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bB.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bN
+            Properties
+                Scope      : Local
+                Caption    : "n"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bN.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bM
+            Properties
+                Scope      : Local
+                Caption    : "m"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bM.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bCom
+            Properties
+                Scope      : Local
+                Caption    : ","
+                Max. length: 10
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bCom.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bDot
+            Properties
+                Scope      : Local
+                Caption    : "."
+                Max. length: 10
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bDot.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bBack
+            Properties
+                Scope      : Local
+                Caption    : "<-"
+                Max. length: 2
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                    }
+                    newVal.txt-=1
+                
+        Button bSpace
+            Properties
+                Scope      : Local
+                Caption    : "SPACE"
+                Max. length: 6
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=" "
+                    btShift.val=0
+                    click btShift,0
+                
+        Variable target
+            Properties
+                Scope         : Global
+                Type          : int32
+                Initial Value : 0
+            
         Dual-state Button btShift
             Properties
                 Scope        : Local
@@ -1159,6 +1039,88 @@ Page Keyboard
                         bQuest.txt="?"
                     }
                 
+        Variable firstClick
+            Properties
+                Scope         : Local
+                Type          : int32
+                Initial Value : 1
+            
+        Button bPlus
+            Properties
+                Scope      : Local
+                Caption    : "+"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bPlus.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bUE
+            Properties
+                Scope      : Local
+                Caption    : "ü"
+                Max. length: 10
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bUE.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bOE
+            Properties
+                Scope      : Local
+                Caption    : "ö"
+                Max. length: 10
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bOE.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bAE
+            Properties
+                Scope      : Local
+                Caption    : "ä"
+                Max. length: 10
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bAE.txt
+                    btShift.val=0
+                    click btShift,0
+                
         Dual-state Button btShift2
             Properties
                 Scope        : Local
@@ -1171,5 +1133,43 @@ Page Keyboard
                     click btShift,1
                 
                 Touch Release Event
+                    click btShift,0
+                
+        Button bArr
+            Properties
+                Scope      : Local
+                Caption    : "<"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bArr.txt
+                    btShift.val=0
+                    click btShift,0
+                
+        Button bQuest
+            Properties
+                Scope      : Local
+                Caption    : "?"
+                Max. length: 1
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    if(firstClick.val==1)
+                    {
+                        firstClick.val=0
+                        newVal.txt=""
+                    }
+                    newVal.txt+=bQuest.txt
+                    btShift.val=0
                     click btShift,0
                 

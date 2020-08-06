@@ -13,22 +13,22 @@ Page USB_FW_Update
         Page Exit Event
             
     Components
-        Text tInfo
+        Text tTitle
             Properties
                 Scope       : Local
-                Initial Text: "Waiting for beginning of transmission..."
-                Max. length : 40
+                Initial Text: "USB Firmware Update"
+                Max. length : 25
             
             Events
                 Touch Press Event
                     
                 Touch Release Event
                     
-        Text tTitle
+        Text tInfo
             Properties
                 Scope       : Local
-                Initial Text: "USB Firmware Update"
-                Max. length : 25
+                Initial Text: "Waiting for beginning of transmission..."
+                Max. length : 40
             
             Events
                 Touch Press Event

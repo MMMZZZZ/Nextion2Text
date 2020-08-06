@@ -17,20 +17,6 @@ Page Identification
             tTitle.txt=sNoCode.txt
         
     Components
-        Variable sNoCode
-            Properties
-                Scope         : Local
-                Type          : String
-                Initial String: "Enter Code"
-                Max. length   : 37
-            
-        Variable sWrongCode
-            Properties
-                Scope         : Local
-                Type          : String
-                Initial String: "Wrong Code!"
-                Max. length   : 37
-            
         Text tTitle
             Properties
                 Scope       : Global
@@ -314,3 +300,17 @@ Page Identification
                         }
                     }
                 
+        Variable sNoCode
+            Properties
+                Scope         : Local
+                Type          : String
+                Initial String: "Enter Code"
+                Max. length   : 37
+            
+        Variable sWrongCode
+            Properties
+                Scope         : Local
+                Type          : String
+                Initial String: "Wrong Code!"
+                Max. length   : 37
+            

@@ -11,10 +11,10 @@ Page Error
         Page Exit Event
             
     Components
-        Text tError
+        Text tTitle
             Properties
                 Scope       : Local
-                Initial Text: "Unbekannter Fehler"
+                Initial Text: "Fehler!"
                 Max. length : 25
             
             Events
@@ -22,10 +22,10 @@ Page Error
                     
                 Touch Release Event
                     
-        Text tTitle
+        Text tError
             Properties
                 Scope       : Local
-                Initial Text: "Fehler!"
+                Initial Text: "Unbekannter Fehler"
                 Max. length : 25
             
             Events
