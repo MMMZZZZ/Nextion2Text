@@ -18,4 +18,8 @@ Where
 * While the source code of all components will be displayed, only a few component properties are currently supported (namely those that occur in my own programs). 
 
 ## Example
-The Example folder contains a HMI file and a subfolder with the resultung text files.
+The Example folder contains a HMI file and a subfolder with the resultung text files. If you want to see how a commit diff looks like when the HMI file has been modified, here's an example: https://github.com/MMMZZZZ/Nextion2Text/commit/f973ae2f13539c2c6a4b75de33a59943dda9ab27
+
+## License
+
+This code is licensed under MPL-2.0. My understanding of this license is that you have to make any changes to my code available under a similar license (GPL compatible). However you do not have to share the rest of your work (unlike GPL). It's kind of a compromise between the MIT and the GPL license. 
