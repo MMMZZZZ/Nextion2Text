@@ -233,6 +233,7 @@ class Component:
         self.typeId = 0
         self.typeStr = ""
         self.events = dict()
+        self.sloc = 0
         self.properties = dict()
         self.propNameMaxLength = 0
         self.raw = componentStr
@@ -253,7 +254,8 @@ class Component:
         self.components.sort(key=self.sortCriteria)
 
     def text(self, indentLevel=0, indent=4, recursive=True, emptyLinesLimit=1):
-        return "".join(self.textLines(indentLevel, indent, recursive, emptyLinesLimit))
+        self.sloc = 0
+        return "".join(self.textLines(indentLevel, indent, recursive, emptyLinesLimit)), self.sloc
 
     def textLines(self, indentLevel=0, indent=4, recursive=True, emptyLinesLimit=1):
         result = IndentList()
@@ -288,6 +290,8 @@ class Component:
                 for cl in codeLines:
                     originalLength = len(cl)
                     clStripped = cl.lstrip(" ")
+                    if clStripped and not clStripped.startswith("//"):
+                        self.sloc += 1
                     clIndentLevel = (originalLength - len(clStripped)) // 2
                     clStripped = result.indentStr * result.indent * clIndentLevel + clStripped
                     result.appendIndentLine(clStripped)
@@ -302,6 +306,7 @@ class Component:
                 comp: Component
                 if recursive:
                     compTextLines = comp.textLines(0, result.indent, True, result.emptyLinesLimit)
+                    self.sloc += comp.sloc
                     for line in compTextLines:
                         result.appendIndentLine(line)
                     result.appendIndentLine("")
@@ -577,12 +582,11 @@ if not os.path.exists(hmiTextFolder):
 totalCodeLines = 0
 for i,page in enumerate(hmi.pages):
     with open(os.path.join(hmiTextFolder, page.self.objname + hmiTextFileExt), "w") as f:
-        pageText = page.self.text(emptyLinesLimit=1)
-        lines = pageText.count("\n")
-        totalCodeLines += lines
+        pageText, sloc = page.self.text(emptyLinesLimit=1)
+        totalCodeLines += sloc
         print(page.self.__repr__())
-        print(" ", lines, "Lines")
+        print(" ", sloc, "Lines of source code")
         f.write(pageText)
-print("Total", totalCodeLines, "Lines")
+print("Total:", totalCodeLines, "Lines of source code")
 
 print("done")
