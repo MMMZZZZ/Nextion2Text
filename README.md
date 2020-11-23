@@ -23,6 +23,8 @@ Supports all Nextion components, including the Intelligent series components.
 
 However, to keep files reasonable small, only "important" component attributes are included. Since this is text only, all of the visual attributes are f.ex. not included (size, position, etc). 
 
+Another limitations: Any text or line of source code that's longer than 255 characters is likely to cause issues. This is because of a hacky and incorrect way of parsing the data. So far no motivation to fix.
+
 ## Example
 
 The Example folder contains a HMI file and a subfolder with the resultung text files. If you want to see how a commit diff looks like when the HMI file has been modified, here's an example: https://github.com/MMMZZZZ/Nextion2Text/commit/f973ae2f13539c2c6a4b75de33a59943dda9ab27
