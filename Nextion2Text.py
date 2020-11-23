@@ -108,7 +108,11 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+                "txt": "Initial Text",
+                "txt_maxl": "Max. length",
+            },
         },
         112: {
             "typeName": "Picture",
@@ -116,7 +120,9 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+            },
         },
         113: {
             "typeName": "Crop Picture",
@@ -124,7 +130,9 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+            },
         },
         106: {
             "typeName": "Progress Bar",
@@ -132,7 +140,11 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+                "dez": "Horizontal/Verical",
+                "val": "Inital value",
+            },
         },
         122: {
             "typeName": "Gauge",
@@ -140,7 +152,10 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+                "val": "Initial angle",
+            },
         },
         0: {
             "typeName": "Waveform",
@@ -148,7 +163,11 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+                "dir": "Flow direction",
+                "ch": "Channels",
+            },
         },
         58: {
             "typeName": "QRCode",
@@ -156,7 +175,11 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+                "txt": "Initial Text",
+                "txt_maxl": "Max. length",
+            },
         },
         98: {
             "typeName": "Button",
@@ -197,7 +220,10 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+                "val": "Initial State",
+            },
         },
         57: {
             "typeName": "Radio",
@@ -205,7 +231,10 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+                "val": "Initial State",
+            },
         },
         1: {
             "typeName": "Slider",
@@ -221,6 +250,136 @@ class Component:
                 "maxval": "Upper End",
             },
         },
+        67: {
+            "typeName": "Switch",
+            "events": {
+                "codesdown": "Touch Press Event",
+                "codesup": "Touch Release Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "val": "Initial state",
+                "txt": "Label",
+            },
+        },
+        61: {
+            "typeName": "ComboBox",
+            "events": {
+                "codesdown": "Touch Press Event",
+                "codesup": "Touch Release Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "path": "Options",
+            },
+        },
+        68: {
+            "typeName": "TextSelect",
+            "events": {
+                "codesdown": "Touch Press Event",
+                "codesup": "Touch Release Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "path": "Options",
+            },
+        },
+        62: {
+            "typeName": "SLText",
+            "events": {
+                "codesdown": "Touch Press Event",
+                "codesup": "Touch Release Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "txt": "Text",
+            },
+        },
+        66: {
+            "typeName": "DataRecord",
+            "events": {
+                "codesdown": "Touch Press Event",
+                "codesup": "Touch Release Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "path": "Data file path",
+                "format": "Format",
+                "dir": "Header",
+                "mode": "Auto create files",
+            },
+        },
+        65: {
+            "typeName": "FileBrowser",
+            "events": {
+                "codesdown": "Touch Press Event",
+                "codesup": "Touch Release Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "dir": "Directory path",
+                "filter": "File name filter(s)",
+                "psta": "Support sub-folder",
+            },
+        },
+        63: {
+            "typeName": "FileStream",
+            "events": dict(),
+            "properties": {
+                "vscope": "Scope",
+            },
+        },
+        2: {
+            "typeName": "Gmov",
+            "events": {
+                "codesdown": "Touch Press Event",
+                "codesup": "Touch Release Event",
+                "codesplayend": "Play Complete Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "vid": "Video ID",
+                "loop": "Loop",
+                "dis": "Playback Speed",
+            },
+        },
+        3: {
+            "typeName": "Video",
+            "events": {
+                "codesdown": "Touch Press Event",
+                "codesup": "Touch Release Event",
+                "codesplayend": "Play Complete Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "from": "Source (Int/Ext)",
+                "vid": "Video ID",
+                "loop": "Loop",
+                "dis": "Playback Speed",
+            },
+        },
+        4: {
+            "typeName": "Audio",
+            "events": {
+                "codesplayend": "Play Complete Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "vid": "Audio ID",
+                "loop": "Loop",
+            },
+        },
+        60: {
+            "typeName": "External Picture",
+            "events": {
+                "codesdown": "Touch Press Event",
+                "codesup": "Touch Release Event",
+            },
+            "properties": {
+                "vscope": "Scope",
+                "path": "File Path",
+            },
+        },
         -1: {
             "typeName": "Unknown",
             "events": dict(),
@@ -234,6 +393,7 @@ class Component:
         self.typeStr = ""
         self.events = dict()
         self.sloc = 0
+        self.uniqueSloc = set()
         self.properties = dict()
         self.propNameMaxLength = 0
         self.raw = componentStr
@@ -255,7 +415,8 @@ class Component:
 
     def text(self, indentLevel=0, indent=4, recursive=True, emptyLinesLimit=1):
         self.sloc = 0
-        return "".join(self.textLines(indentLevel, indent, recursive, emptyLinesLimit)), self.sloc
+        self.uniqueSloc = set()
+        return "".join(self.textLines(indentLevel, indent, recursive, emptyLinesLimit)), self.sloc, len(self.uniqueSloc)
 
     def textLines(self, indentLevel=0, indent=4, recursive=True, emptyLinesLimit=1):
         result = IndentList()
@@ -291,6 +452,7 @@ class Component:
                     originalLength = len(cl)
                     clStripped = cl.lstrip(" ")
                     if clStripped and not clStripped.startswith("//"):
+                        self.uniqueSloc.add(clStripped)
                         self.sloc += 1
                     clIndentLevel = (originalLength - len(clStripped)) // 2
                     clStripped = result.indentStr * result.indent * clIndentLevel + clStripped
@@ -307,6 +469,7 @@ class Component:
                 if recursive:
                     compTextLines = comp.textLines(0, result.indent, True, result.emptyLinesLimit)
                     self.sloc += comp.sloc
+                    self.uniqueSloc |= comp.uniqueSloc
                     for line in compTextLines:
                         result.appendIndentLine(line)
                     result.appendIndentLine("")
@@ -580,13 +743,17 @@ if not os.path.exists(hmiTextFolder):
     os.mkdir(hmiTextFolder)
 
 totalCodeLines = 0
+tusloc = 0
 for i,page in enumerate(hmi.pages):
     with open(os.path.join(hmiTextFolder, page.self.objname + hmiTextFileExt), "w") as f:
-        pageText, sloc = page.self.text(emptyLinesLimit=1)
+        pageText, sloc, uniqueSloc = page.self.text(emptyLinesLimit=1)
         totalCodeLines += sloc
+        tusloc += uniqueSloc
         print(page.self.__repr__())
         print(" ", sloc, "Lines of source code")
+        print(" ", uniqueSloc, "Unique lines of source code")
         f.write(pageText)
 print("Total:", totalCodeLines, "Lines of source code")
+print("      ", tusloc, "Unique lines of source code")
 
 print("done")
