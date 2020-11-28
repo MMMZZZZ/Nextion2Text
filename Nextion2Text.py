@@ -58,8 +58,7 @@ class Component:
         51: {
             "typeName": "Timer",
             "events": {
-                "codesdown": "Touch Press Event",
-                "codesup": "Touch Release Event",
+                "codestimer": "Timer Event",
             },
             "properties": {
                 "vscope": "Scope",
@@ -75,7 +74,22 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "style": "Style",
+                "font": "Font",
+                "bco": "Background Color",
+                "pco": "Font Color",                
+                "xcen": "X Center",
+                "ycen": "Y Center",
                 "val": "Initial Value",
+                "lenth": "Show length",
+                "format": "Format",
+                "isbr": "isbr (Text Wrap)",
+                "spax": "Spacing x",
+                "spay": "Spacing y",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"            
             },
         },
         59: {
@@ -86,8 +100,22 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "style": "Style",
+                "font": "Font",
+                "bco": "Background Color",
+                "pco": "Font Color",
+                "xcen": "X Center",
+                "ycen": "Y Center",
                 "val": "Initial Value",
-                "vvs1": "Divide by [10^x]"
+                "vvs0": "vvs0",
+                "vvs1": "vvs1 (Divide by [10^x])",
+                "isbr": "isbr (Text Wrap)",
+                "spax": "Spacing x",
+                "spay": "Spacing y",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         116: {
@@ -98,8 +126,22 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "style": "Style",
+                "font": "Font",
+                "bco": "Background Color",
+                "pco": "Font Color",
+                "xcen": "X Center",
+                "ycen": "Y Center",
+                "pw": "Password Mode",
                 "txt": "Initial Text",
-                "txt_maxl": "Max. length"
+                "txt_maxl": "Max. length",
+                "isbr": "isbr (Text Wrap)",
+                "spax": "Spacing x",
+                "spay": "Spacing y",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         55: {
@@ -110,8 +152,25 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "style": "Style",
+                "font": "Font",
+                "bco": "Background Color",
+                "pco": "Font Color",
+                "xcen": "X Center",
+                "ycen": "Y Center",
+                "dir": "Direction",
+                "dis": "dis (Speed)",
+                "tim": "Time",
+                "en": "Enable",
                 "txt": "Initial Text",
                 "txt_maxl": "Max. length",
+                "isbr": "isbr (Text Wrap)",
+                "spax": "Spacing x",
+                "spay": "Spacing y",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         112: {
@@ -122,6 +181,10 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         113: {
@@ -132,6 +195,10 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         106: {
@@ -144,6 +211,12 @@ class Component:
                 "vscope": "Scope",
                 "dez": "Horizontal/Verical",
                 "val": "Inital value",
+                "bco": "Background Color",
+                "pco": "Foreground color",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         122: {
@@ -154,7 +227,13 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
-                "val": "Initial angle",
+                "val": "Initial Angle",
+                "bco": "Background Color",
+                "pco": "Foreground color",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         0: {
@@ -165,8 +244,15 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
-                "dir": "Flow direction",
+                "dir": "Flow Direction",
                 "ch": "Channels",
+                "bco": "Background Color",
+                #"pco0": "Channel 0 Color",
+                #"pco1": "Channel 1 Color",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         58: {
@@ -177,8 +263,15 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "sta": "sta",
+                "bco": "Background Color",
+                "pco": "Font Color",
                 "txt": "Initial Text",
                 "txt_maxl": "Max. length",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         98: {
@@ -189,8 +282,23 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "style": "Style",
+                "font": "Font",
+                "bco": "Background Color",
+                "bco2": "Pressed Background Color",
+                "pco": "Font Color",
+                "pco2": "Pressed Font Color",
+                "xcen": "X Center",
+                "ycen": "Y Center",
                 "txt": "Caption",
-                "txt_maxl": "Max. length"
+                "txt_maxl": "Max. length",
+                "isbr": "isbr (Text Wrap)",
+                "spax": "Spacing x",
+                "spay": "Spacing y",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         53: {
@@ -201,9 +309,24 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "style": "Style",
+                "font": "Font",
+                "bco": "Background Color",
+                "bco2": "Pressed Background Color",
+                "pco": "Font Color",
+                "pco2": "Pressed Font Color",
+                "xcen": "X Center",
+                "ycen": "Y Center",
                 "val": "Initial State",
                 "txt": "Caption",
                 "txt_maxl": "Max. length",
+                "isbr": "isbr (Text Wrap)",
+                "spax": "Spacing x",
+                "spay": "Spacing y",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         109: {
@@ -212,7 +335,13 @@ class Component:
                 "codesdown": "Touch Press Event",
                 "codesup": "Touch Release Event"
             },
-            "properties": dict(),
+            "properties": {
+                "vscope": "Scope",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
+            },
         },
         56: {
             "typeName": "Checkbox",
@@ -222,7 +351,14 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "style": "Style",                
+                "bco": "Background Color",
+                "pco": "foreground color",
                 "val": "Initial State",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         57: {
@@ -233,7 +369,13 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "bco": "Background Color",
+                "pco": "foreground color",
                 "val": "Initial State",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         1: {
@@ -245,9 +387,20 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
+                "mode": "Mode",
+                "sta": "sta (Background Fill)",
+                "psta": "psta (Cursor Fill)",
+                "wid": "wid (Cursor Width)",
+                "hig": "hig (Cursor Height)",
+                "bco": "Background Color",
+                "pco": "Foreground Color",
                 "val": "Initial Position",
                 "minval": "Lower End",
                 "maxval": "Upper End",
+                "x": "Pos X",
+                "y": "Pos Y",
+                "w": "Width",
+                "h": "Height"
             },
         },
         67: {
@@ -258,7 +411,7 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
-                "val": "Initial state",
+                "val": "Initial State",
                 "txt": "Label",
             },
         },
@@ -387,7 +540,7 @@ class Component:
         }
     }
 
-    def __init__(self, componentStr):
+    def __init__(self, componentStr, option):
         self.components = []
         self.typeId = 0
         self.typeStr = ""
@@ -400,7 +553,7 @@ class Component:
         self.objname = self.getProperty("objname")
         self.loadType()
         self.loadEvents()
-        self.loadProperties()
+        self.loadProperties(option)
 
     def __repr__(self):
         return self.typeStr + " " + self.objname
@@ -527,7 +680,7 @@ class Component:
             eventData = self.getProperty(event)
             self.events[commonName] = "\n".join(eventData)
 
-    def loadProperties(self):
+    def loadProperties(self, option):
         self.propNameMaxLength = 0
         if self.objname == "fSlider":
             print("")
@@ -540,11 +693,6 @@ class Component:
                 self.properties[prop] = 0
                 for i,e in enumerate(data):
                     self.properties[prop] += (ord(e) << (8 * i))
-            elif prop == "en":
-                if ord(data[0]):
-                    self.properties[prop] = "Yes"
-                else:
-                    self.properties[prop] = "No"
             elif prop == "vscope":
                 if ord(data[0]):
                     self.properties[prop] = "Global"
@@ -567,9 +715,84 @@ class Component:
                     self.properties[prop] = "Not pushed"
             elif prop == "txt":
                 self.properties[prop] = "\"" + data + "\""
+            elif prop in ["x", "y", "w", "h", "bco", "pco", "bco2", "pco2"]:
+                if (option > 0): # show position and color
+                    self.properties[prop] = 0
+                    for i,e in enumerate(data):
+                        self.properties[prop] += (ord(e) << (8 * i))
+            elif prop in ["font", "lenth", "wid", "hig", "vvs0", "vvs1", "spax", "spay", "dis"]:
+                if (option > 1): # show all
+                    self.properties[prop] = 0
+                    for i,e in enumerate(data):
+                        self.properties[prop] += (ord(e) << (8 * i))
+            elif prop == "format":
+                if (option > 1): # show all
+                    if ord(data[0])==0:
+                        self.properties[prop] = "Decimal"
+                    elif ord(data[0])==1:
+                        self.properties[prop] = "Currenxy"
+                    else:
+                        self.properties[prop] = "Hex"
+            elif prop == "xcen":
+                if (option > 1): # show all
+                    if ord(data[0])==0:
+                        self.properties[prop] = "Left"
+                    elif ord(data[0])==1:
+                        self.properties[prop] = "Center"
+                    else:
+                        self.properties[prop] = "Right"
+            elif prop == "ycen":
+                if (option > 1): # show all
+                    if ord(data[0])==0:
+                        self.properties[prop] = "Up"
+                    elif ord(data[0])==1:
+                        self.properties[prop] = "Center"
+                    else:
+                        self.properties[prop] = "Down"
+            elif prop == "style":
+                if (option > 1): # show all
+                    if ord(data[0])==0:
+                        self.properties[prop] = "Flat"
+                    elif ord(data[0])==1:
+                        self.properties[prop] = "Border"
+                    elif ord(data[0])==2:
+                        self.properties[prop] = "3D_Down"                    
+                    elif ord(data[0])==3:
+                        self.properties[prop] = "3D_Up"
+                    else:
+                        self.properties[prop] = "3D_Auto"
+            elif prop == "mode":
+                if (option > 1): # show all
+                    if ord(data[0]):
+                        self.properties[prop] = "Vertical"
+                    else:
+                        self.properties[prop] = "Horizontal"
+            elif prop in ["sta", "psta"]:
+                if (option > 1): # show all
+                    if ord(data[0]):
+                        self.properties[prop] = "Image"
+                    else:
+                        self.properties[prop] = "Solid"                    
+            elif prop == "pw":
+                if (option > 1): # show all
+                    if ord(data[0]):
+                        self.properties[prop] = "Password"
+                    else:
+                        self.properties[prop] = "Character"
+            elif prop == "dir":
+                if (option > 1): # show all
+                    if ord(data[0]):
+                        self.properties[prop] = "Right to Left"
+                    else:
+                        self.properties[prop] = "Left to Right"
+            elif prop == "isbr":
+                if (option > 1): # show all
+                    if ord(data[0]):
+                        self.properties[prop] = "True"
+                    else:
+                        self.properties[prop] = "False"
             else:
                 self.properties[prop] = data
-
             if len(self.types[self.typeId]["properties"][prop]) > self.propNameMaxLength:
                 self.propNameMaxLength = len(self.types[self.typeId]["properties"][prop])
 
@@ -684,7 +907,7 @@ class HMIHeader(Header):
         self.count = len(self.content)
 
 class Page:
-    def __init__(self, raw, start: int, size: int):
+    def __init__(self, raw, start: int, size: int, option):
         self.__raw = raw
         self.start = start
         self.size = size
@@ -696,13 +919,13 @@ class Page:
             start = self.start + self.header.headerSize + comp.startOffset
             end = start + comp.size
             compStr = self.__raw[start:end].decode("ansi")
-            components.append(Component(compStr))
+            components.append(Component(compStr, option))
 
         self.self = components.pop(0)
         self.self.components = components
 
 class HMI:
-    def __init__(self, HMIFilePath):
+    def __init__(self, HMIFilePath, option):
         objectList = list()
         with open(HMIFilePath, "rb") as HMIFile:
             self.raw = HMIFile.read()
@@ -710,7 +933,7 @@ class HMI:
         self.pages = []
         for obj in self.header.content:
             if obj.isPage():
-                self.pages.append(Page(self.raw, obj.start, obj.size))
+                self.pages.append(Page(self.raw, obj.start, obj.size, option))
             """
             end = obj.start + len(obj)
             s = self.raw[obj.start:end].decode("ansi")
@@ -727,16 +950,20 @@ class HMI:
 
 
 ### Here starts the script part.
-if len(sys.argv) != 5:
+if (len(sys.argv) != 5) & (len(sys.argv) != 6):
     print("Arguments: ", sys.argv)
-    raise ValueError("Exactly 4 arguments required: Working directory, HMI file name, output subfolder name, output text file extension.")
+    raise ValueError("4 or 5 arguments required: Working directory, HMI file name, output subfolder name, output text file extension, option.")
 
 hmiPath = sys.argv[1]
 hmiFile = sys.argv[2]
 hmiTextFolder = sys.argv[3]
 hmiTextFileExt = sys.argv[4]
-
-hmi = HMI(os.path.join(hmiPath, hmiFile))
+if (len(sys.argv) == 6):
+    option = int(sys.argv[5])
+else:
+    option = 0  # default 0
+print(option)    
+hmi = HMI(os.path.join(hmiPath, hmiFile), option)
 
 hmiTextFolder = os.path.join(hmiPath, hmiTextFolder)
 if not os.path.exists(hmiTextFolder):
