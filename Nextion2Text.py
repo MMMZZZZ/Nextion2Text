@@ -227,7 +227,7 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
-                "val": "Initial Angle",
+                "val": "Initial angle",
                 "bco": "Background Color",
                 "pco": "Foreground color",
                 "x": "Pos X",
@@ -244,7 +244,7 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
-                "dir": "Flow Direction",
+                "dir": "Flow direction",
                 "ch": "Channels",
                 "bco": "Background Color",
                 #"pco0": "Channel 0 Color",
@@ -411,7 +411,7 @@ class Component:
             },
             "properties": {
                 "vscope": "Scope",
-                "val": "Initial State",
+                "val": "Initial state",
                 "txt": "Label",
             },
         },
