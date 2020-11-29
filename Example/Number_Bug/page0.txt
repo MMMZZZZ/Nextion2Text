@@ -1,0 +1,343 @@
+Page page0
+    Events
+        Preinitialize Event
+            
+        Postinitialize Event
+            
+        Touch Press Event
+            
+        Touch Release Event
+            
+        Page Exit Event
+            
+    Components
+        Number n0
+            Properties
+                Scope        : Local
+                Initial Value: 2208
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n1
+            Properties
+                Scope        : Local
+                Initial Value: 2424
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n2
+            Properties
+                Scope        : Local
+                Initial Value: 2430
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n3
+            Properties
+                Scope        : Local
+                Initial Value: 2205
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n4
+            Properties
+                Scope        : Local
+                Initial Value: 2387
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n5
+            Properties
+                Scope        : Local
+                Initial Value: 10298
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n6
+            Properties
+                Scope        : Local
+                Initial Value: 2401
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n7
+            Properties
+                Scope        : Local
+                Initial Value: 10530
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n8
+            Properties
+                Scope        : Local
+                Initial Value: 2780
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n9
+            Properties
+                Scope        : Local
+                Initial Value: 10260
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n10
+            Properties
+                Scope        : Local
+                Initial Value: 10259
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n11
+            Properties
+                Scope        : Local
+                Initial Value: 10274
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n12
+            Properties
+                Scope        : Local
+                Initial Value: 10269
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n13
+            Properties
+                Scope        : Local
+                Initial Value: 10268
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n14
+            Properties
+                Scope        : Local
+                Initial Value: 10265
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n15
+            Properties
+                Scope        : Local
+                Initial Value: 2387
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n16
+            Properties
+                Scope        : Local
+                Initial Value: 10298
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n17
+            Properties
+                Scope        : Local
+                Initial Value: 2401
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n18
+            Properties
+                Scope        : Local
+                Initial Value: 10530
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n19
+            Properties
+                Scope        : Local
+                Initial Value: 2780
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n20
+            Properties
+                Scope        : Local
+                Initial Value: 10260
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n21
+            Properties
+                Scope        : Local
+                Initial Value: 10259
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n22
+            Properties
+                Scope        : Local
+                Initial Value: 10274
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n23
+            Properties
+                Scope        : Local
+                Initial Value: 10269
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n24
+            Properties
+                Scope        : Local
+                Initial Value: 10268
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n25
+            Properties
+                Scope        : Local
+                Initial Value: 10265
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n26
+            Properties
+                Scope        : Local
+                Initial Value: 10264
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n27
+            Properties
+                Scope        : Local
+                Initial Value: 2192
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n28
+            Properties
+                Scope        : Local
+                Initial Value: 2191
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n29
+            Properties
+                Scope        : Local
+                Initial Value: 2429
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n30
+            Properties
+                Scope        : Local
+                Initial Value: 2189
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n31
+            Properties
+                Scope        : Local
+                Initial Value: 10270
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
+        Number n32
+            Properties
+                Scope        : Local
+                Initial Value: 2170
+            
+            Events
+                Touch Press Event
+                    
+                Touch Release Event
+                    
