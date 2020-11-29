@@ -58,8 +58,7 @@ class Component:
         51: {
             "typeName": "Timer",
             "events": {
-                "codesdown": "Touch Press Event",
-                "codesup": "Touch Release Event",
+                "codestimer": "Timer Event",
             },
             "properties": {
                 "vscope": "Scope",
@@ -540,11 +539,6 @@ class Component:
                 self.properties[prop] = 0
                 for i,e in enumerate(data):
                     self.properties[prop] += (ord(e) << (8 * i))
-            elif prop == "en":
-                if ord(data[0]):
-                    self.properties[prop] = "Yes"
-                else:
-                    self.properties[prop] = "No"
             elif prop == "vscope":
                 if ord(data[0]):
                     self.properties[prop] = "Global"
