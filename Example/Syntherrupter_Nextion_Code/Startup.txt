@@ -28,6 +28,9 @@ Page Startup
                     click pStartup,0
                 
         Picture pStartup
+            Properties
+                Scope: Local
+            
             Events
                 Touch Press Event
                     

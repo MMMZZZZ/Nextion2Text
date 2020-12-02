@@ -735,13 +735,11 @@ Page MIDI_Live
                 Running    : No
             
             Events
-                Touch Press Event
-                    p
-                    e
-                
-                Touch Release Event
-                    p
-                    e
+                Timer Event
+                    tmTCButtonHold.en=0
+                    MIDI_TC_Set.origin.val=dp
+                    covx sCoil.txt,MIDI_TC_Set.coilNum.val,0,0
+                    page MIDI_TC_Set
                 
         Variable sCoil
             Properties
@@ -872,13 +870,8 @@ Page MIDI_Live
                 Running    : No
             
             Events
-                Touch Press Event
-                    p
-                    e
-                
-                Touch Release Event
-                    p
-                    e
+                Timer Event
+                    openEE.val=1
                 
         Variable openEE
             Properties
