@@ -3,6 +3,7 @@ import os
 import sys
 import struct
 from typing import List
+import argparse
 
 class IndentList(list):
     def __init__(self, *args, **kwargs):
@@ -632,41 +633,36 @@ class Component:
             result.appendIndentLine("")
         return result
 
-    def entryEnd(self, start):
-        end1 = self.raw.find("\x00\x00\x00\x00", start)
-        end2 = self.raw.find("\x00\x00\x00", start)
-        if end1 != end2:
-            end2 -= 1
-        return end2
-
     def getProperty(self, property):
         # "normal" propertiy names are filled up with \x00 to a length of 16 bytes.
-        # "normal" properties end with a random caracter and 3x \x00
         # Variable length properties have the length indicated after their name
         property: str
 
         if property in self.types[self.typeId]["events"]:
+            #rawBytes = self.raw.encode()
             propertyStr = property + "-"
             propertyIndex = self.raw.find(propertyStr)
             if propertyIndex >= 0:
                 # Variable length property
-                propertyIndex += len(propertyStr)
-                propertyLengthEnd = self.entryEnd(propertyIndex)
-                propertyLength = int(self.raw[propertyIndex:propertyLengthEnd])
+                propertyTitleLength = struct.unpack_from("<I", self.raw.encode("ansi"), propertyIndex - 4)[0]
+                propertyEntriesCount = int(self.raw[propertyIndex + len(propertyStr) : propertyIndex + propertyTitleLength])
+                propertyIndex += propertyTitleLength
                 properties = list()
-                propertyIndex = propertyLengthEnd + 4
-                index = 0
-                while index < propertyLength:
-                    lineEnd = self.entryEnd(propertyIndex)
-                    properties.append(self.raw[propertyIndex:lineEnd])
-                    propertyIndex = lineEnd + 4
-                    index += 1
+                # propertyIndex = propertyLengthEnd + 4
+                propertyEntries = 0
+                while propertyEntries < propertyEntriesCount:
+                    entryLength = struct.unpack_from("<I", self.raw.encode("ansi"), propertyIndex)[0]
+                    propertyIndex += 4
+                    entryEnd = propertyIndex + entryLength
+                    properties.append(self.raw[propertyIndex:entryEnd])
+                    propertyIndex = entryEnd
+                    propertyEntries += 1
                 return properties
         propertyStr = property + (16 - len(property)) * "\x00"
-        propertyIndex = self.raw.find(propertyStr) + 16
+        propertyIndex = self.raw.find(propertyStr)
         if propertyIndex >= 0:
-            propertyEnd = self.entryEnd(propertyIndex)
-            return  self.raw[propertyIndex:propertyEnd]
+            propertyLength = struct.unpack_from("<I", self.raw.encode("ansi"), propertyIndex - 4)[0]
+            return  self.raw[propertyIndex + len(propertyStr) : propertyIndex + propertyLength]
         raise Exception("PropertyNotFound: " + property)
 
     def loadType(self):
@@ -793,6 +789,7 @@ class Component:
                         self.properties[prop] = "False"
             else:
                 self.properties[prop] = data
+
             if len(self.types[self.typeId]["properties"][prop]) > self.propNameMaxLength:
                 self.propNameMaxLength = len(self.types[self.typeId]["properties"][prop])
 
@@ -950,22 +947,34 @@ class HMI:
 
 
 ### Here starts the script part.
-if (len(sys.argv) != 5) & (len(sys.argv) != 6):
-    print("Arguments: ", sys.argv)
-    raise ValueError("4 or 5 arguments required: Working directory, HMI file name, output subfolder name, output text file extension, option.")
+if __name__ == '__main__':
+    desc = """Get a readable text version of a Nextion HMI file. 
+              Developped by Max Zuidberg, licensed under MPL-2.0"""
+    parser = argparse.ArgumentParser(description=desc)
+    parser.add_argument("-i", metavar="hmiFile", type=str, required=True,
+                        help="Path to the HMI source file")
+    parser.add_argument("-o", metavar="textFolder", type=str, required=True,
+                        help="Path to the folder for the generated text files.")
+    parser.add_argument("-e", metavar="extension", type=str, required=False, default=".txt",
+                        help="Optional Extension that is added to the text files (default: \".txt\")")
+    #parser.add_argument("-v", type=str, required=False, const=True, default=False, nargs="?",
+    #                    help="Path to the folder for the generated text files.")
+    parser.add_argument("-m", metavar="mode", type=int, required=False, default=0,
+                        help="Optional Mode 0=simple, 1=including position and color, 2=full (default: 0)")
+    args = parser.parse_args()
 
-hmiPath = sys.argv[1]
-hmiFile = sys.argv[2]
-hmiTextFolder = sys.argv[3]
-hmiTextFileExt = sys.argv[4]
-if (len(sys.argv) == 6):
-    option = int(sys.argv[5])
-else:
-    option = 0  # default 0
-print(option)    
-hmi = HMI(os.path.join(hmiPath, hmiFile), option)
+    option = args.m
+    hmiFile = args.i
+    hmiTextFolder = args.o
+    hmiTextFileExt = args.e
 
-hmiTextFolder = os.path.join(hmiPath, hmiTextFolder)
+    hmi = HMI(hmiFile, option)
+
+    print(option)    
+
+    if not hmiTextFileExt.startswith("."):
+        hmiTextFileExt = "." + hmiTextFileExt
+
 if not os.path.exists(hmiTextFolder):
     os.mkdir(hmiTextFolder)
 

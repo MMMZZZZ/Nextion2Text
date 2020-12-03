@@ -429,7 +429,7 @@ Page Simple
         Number nBPS
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 100
             
             Events
                 Touch Press Event
