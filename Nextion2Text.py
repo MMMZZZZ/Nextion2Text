@@ -1227,7 +1227,7 @@ if __name__ == '__main__':
             tusloc |= usloc
             totalCodeLines += sloc
             stats = []
-            stats.append(str(page))
+            stats.append(name)
             stats.append("\t" + str(sloc).ljust(4) + " Line(s) of event code")
             stats.append("\t" + str(len(usloc)).ljust(4) + " Unique line(s) of event code")
             for i,stat in enumerate(stats):
