@@ -11,7 +11,7 @@ This tool can NOT convert text back to a .HMI file.
 ## Usage
 
 The script is written in Python, v3.8. No additional modules are required. 
-Run the script from the command line with
+The script offers a couple options to customize its behavior and output. For most basic usage, simply run
 
 ```python Nextion2Text.py -i HMI_FILE -o OUTPUT_FOLDER```
 
@@ -19,6 +19,8 @@ Where
 
 * `PATH_TO_HMI_FILE` is the path to the Nextion HMI file.
 * `OUTPUT_FOLDER` is the name of the folder which will contain the resulting text files. It will be created relative to `FOLDER_PATH`
+
+Note that by default, no visual properties (x/y position, colors, pictures, fonts, ...) are *not* included. 
 
 To get a full description of all command line options, use
 
@@ -28,15 +30,13 @@ To get a full description of all command line options, use
 
 Supports all Nextion components, including the Intelligent series components. 
 
-However, to keep files reasonable small, only "important" component attributes are included. Since this is text only, all of the visual attributes are f.ex. not included (size, position, etc). 
-
-~~Another limitations: Any text or line of source code that's longer than 255 characters is likely to cause issues. This is because of a hacky and incorrect way of parsing the data. So far no motivation to fix.~~ **Fixed!**
+However, Intelligent series attributes are only partially supported by now. You can use the `--properties unknown` (See command line help for more details) option to include unknown attributes, too. 
 
 ## Example
 
 The Example folder contains a HMI file and a subfolder with the resultung text files. If you want to see how a commit diff looks like when the HMI file has been modified, here's an example: https://github.com/MMMZZZZ/Nextion2Text/commit/f973ae2f13539c2c6a4b75de33a59943dda9ab27
 
-**Note:** Before the parser had been fixed, the script did actually not parse all numbers correctly, so not every initial variable value in the example commit above is correct. The issue is fixed by now!
+**Note:** The given example is from an earlier version of the parser that had some bugs and severe limitations. However, it still gives a good idea about what you get!
 
 ## License
 
