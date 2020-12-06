@@ -1280,7 +1280,7 @@ class Component:
                     attributes[attName] = attData
             elif attName != "model" and (includeUnknown or attName in customInclude):
                 if not attName in customInclude:
-                    attName = "UNKNWN " + attName
+                    attName = "UNKNOWN " + attName
                 if len(attData) > 4 or includeUnknown == 2:#raw
                     attData = attData.decode("ansi")
                 elif includeUnknown == 3:#hex
