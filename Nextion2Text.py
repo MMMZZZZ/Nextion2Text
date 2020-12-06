@@ -1218,9 +1218,6 @@ class Component:
                 for cl in codeLines:
                     originalLength = len(cl)
                     clStripped = cl.lstrip(" ")
-                    if clStripped and not clStripped.startswith("//"):
-                        self.uniqueSloc.add(clStripped)
-                        self.sloc += 1
                     clIndentLevel = (originalLength - len(clStripped)) // 2
                     clStripped = result.indentStr * result.indent * clIndentLevel + clStripped
                     result.appendIndentLine(clStripped)
@@ -1232,7 +1229,7 @@ class Component:
 
     def parseRawProperties(self, customInclude=set(), customExclude=set(),
                            includeVisuals:bool=False, includeUnknown:int=0,
-                           inplace=True, **kwargs):
+                           inplace=True, emptyEvents=False, **kwargs):
 
         data = dict()
         # Model name is considered as an "attribute", too. (needed to know the right interpretation; see below)
@@ -1299,6 +1296,8 @@ class Component:
         self.rawData["att"].pop("model")
         for attName, attData in self.rawData.items():
             if not attName.startswith("codes") or (not includeUnknown and attName not in Component.codeEvents):
+                continue
+            if not emptyEvents and not attData:
                 continue
             if not "Events" in data:
                 data["Events"] = dict()
@@ -1587,7 +1586,7 @@ class HMI:
 
 
 ### Here starts the script part.
-def getCodeLines(rawLines, removeIndent=True, removeComments=False):
+def getCodeLines(rawLines, removeIndent=False, removeComments=True):
     eventLines = list()
     if type(rawLines) == dict:
         for k, v in rawLines.items():
@@ -1600,7 +1599,7 @@ def getCodeLines(rawLines, removeIndent=True, removeComments=False):
     if removeIndent:
         eventLines = [l.lstrip(" ") for l in eventLines]
     if removeComments:
-        eventLines = [l for l in eventLines if l.lstrip(" ").startswith("//")]
+        eventLines = [l for l in eventLines if not l.lstrip(" ").startswith("//")]
     return eventLines
 
 if __name__ == '__main__':
@@ -1613,8 +1612,10 @@ if __name__ == '__main__':
                         help="Path to the folder for the generated text files.")
     parser.add_argument("-d", "--del_out", action="store_true",
                         help="Optional flag to delete the content of the output folder before creating the new files.")
-    parser.add_argument("-e", "--file_ext", metavar="EXTENSION", type=str, required=False, default=".txt",
+    parser.add_argument("-f", "--file_ext", metavar="EXTENSION", type=str, required=False, default=".txt",
                         help="Optional Extension that is added to the text files (default: \".txt\")")
+    parser.add_argument("-e", "--empty_events", action="store_true",
+                        help="Optional flag to include empty events in the output (Excluded by default).")
     parser.add_argument("-s", "--stats", action="store_true",
                         help="Optional flag to create a file in the output folder that will include all the statistics "
                              "you see in the command line output.")
@@ -1622,7 +1623,7 @@ if __name__ == '__main__':
                         help="Optional flag to create a JSON subfolder in the output folder, that contains the "
                              "parsed data of each page as more or less nicely formatted json. Note: if you want the "
                              "\"raw\" data as json, specify an empty custom attributes dictionary.")
-    parser.add_argument("-p", "--properties", required=False, nargs="*",
+    parser.add_argument("-p", "--properties", required=False, nargs="*", default=[],
                         help="Specify the (list of) properties that shall be included in the parsing. "
                              "By default, only known, non-visual properties are included. If you want to include "
                              "visual properties and/or unknown properties, too, specify \"visuals\", \"unknowns\" or "
@@ -1728,13 +1729,16 @@ if __name__ == '__main__':
     codeLines = dict()
     texts["Program.s"] = "Program.s\n    " + "\n    ".join(hmi.programS.splitlines()) + "\n"
     codeLines["Program.s"] = getCodeLines(hmi.programS)
+    compCount = dict()
+    compCount["Program.s"] = 0
     if args.json:
         with open(jsonFolder / Path("Program.s" + ".json"), "w") as f:
             json.dump({"Program.s": hmi.programS}, f, indent=4)
     for page in hmi.pages:
-        name = page.components[0].rawData["att"]["objname"]
-        text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown, includeVisuals=includeVisuals)
+        name = str(page)
+        text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown, includeVisuals=includeVisuals, emptyEvents=args.empty_events)
         texts[name] = text
+        compCount[name] = len(page.components)
         codeLines[name] = []
         for c in page.components:
             codeLines[name].extend(getCodeLines(c.rawData))
@@ -1752,6 +1756,7 @@ if __name__ == '__main__':
             totalCodeLines += sloc
             stats = []
             stats.append(name)
+            stats.append("\t" + str(compCount[name]).ljust(4) + " Component(s)")
             stats.append("\t" + str(sloc).ljust(4) + " Line(s) of event code")
             stats.append("\t" + str(len(usloc)).ljust(4) + " Unique line(s) of event code")
             for i,stat in enumerate(stats):
@@ -1760,6 +1765,14 @@ if __name__ == '__main__':
             if args.stats:
                 statFile.writelines(stats)
             f.write(text)
-    print("Total:", str(totalCodeLines).ljust(4), "Lines of event code")
-    print("      ", str(len(tusloc)).ljust(4), "Unique lines of event code")
-
+    stats = ["", "Total"]
+    stats.append("\t" + str(len(hmi.pages)).ljust(4) + " Page(s)")
+    stats.append("\t" + str(sum(compCount.values())).ljust(4) + " Component(s)")
+    stats.append("\t" + str(totalCodeLines).ljust(4) + " Line(s) of event code")
+    stats.append("\t" + str(len(tusloc)).ljust(4) + " Unique line(s) of event code")
+    for i, stat in enumerate(stats):
+        print(stat.replace("\t", "     "))
+        stats[i] = stat + "\n"
+    if args.stats:
+        statFile.writelines(stats)
+        statFile.close()
