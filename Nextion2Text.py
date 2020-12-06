@@ -1735,7 +1735,7 @@ if __name__ == '__main__':
         with open(jsonFolder / Path("Program.s" + ".json"), "w") as f:
             json.dump({"Program.s": hmi.programS}, f, indent=4)
     for page in hmi.pages:
-        name = str(page)
+        name = page.components[0].rawData["att"]["objname"]#str(page)
         text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown, includeVisuals=includeVisuals, emptyEvents=args.empty_events)
         texts[name] = text
         compCount[name] = len(page.components)
