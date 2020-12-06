@@ -127,17 +127,18 @@ class Component:
             "struct": "s",
         },
         "sta": {
-            "name": "Variant",
+            "name": "Fill",
             "struct": "i",
             "vis": True,
             "mapping": {
-                0: "Crop Image Background",
-                1: "Solid Color Background",
-                2: "Image Background",
+                0: "crop image",
+                1: "solid color",
+                2: "image",
             },
             "type": {
                 52: {#Variable
                     "vis": False,
+                    "ignore": True,
                     "mapping": {
                         0: "int32",
                         1: "string",
@@ -152,24 +153,94 @@ class Component:
                 },
                 121: {#Page
                     "mapping": {
-                        0: "No background (white)",
-                        1: "Solid color",
-                        2: "Picture",
+                        0: "no background (white)",
+                        1: "solid color",
+                        2: "picture",
+                    },
+                },
+                106: {#Progress Bar
+                    "mapping": {
+                        0: "solid color",
+                        1: "image",
                     },
                 },
             },
             "model": {
                 "P": {
+                    "mapping": {
+                        0: "crop image",
+                        1: "solid color",
+                        2: "image",
+                        3: "transparent",
+                    },
                     "type": {
                         121: {
                             "mapping": {
-                                0: "No background (transparent)",
-                                1: "Solid color",
-                                2: "Picture",
+                                0: "no background (transparent)",
+                                1: "solid color",
+                                2: "picture",
                             },
                         },
                     },
                 },
+            },
+        },
+        "psta": {
+            "struct": "i",
+            "name": "Cursor Fill",
+            "vis": True,
+            "mapping": {
+                0: "circular",
+                1: "image",
+                2: "square",
+            },
+            "model": {
+                -1: {
+                    "ignore": True,
+                },
+                "P": {
+                    "ignore": False,
+                },
+            },
+        },
+        "style": {
+            "name": "Style",
+            "struct": "i",
+            "vis": True,
+            "mapping": {
+                0: "flat",
+                1: "border",
+                2: "3D down",
+                3: "3D up",
+                4: "3D auto",
+            },
+            "sta": {
+                -1: {
+                    "ignore": True,
+                },
+                1: {
+                    "ignore": False,
+                }
+            }
+        },
+        "key": {
+            "struct": "i",
+            "name": "Associated Keyboard",
+            "mapping": {
+                255: "none",
+            },
+        },
+        "font": {
+            "struct": "i",
+            "name": "Font ID"
+        },
+        "pw": {
+            "struct": "i",
+            "name": "Input Type",
+            "vis": True,
+            "mapping": {
+                0: "Character",
+                1: "Password",
             },
         },
         "val": {
@@ -178,6 +249,13 @@ class Component:
             "type": {
                 1: {
                     "name": "Initial position",
+                },
+                52: {
+                    "sta": {
+                        1 : {
+                            "ignore": True,
+                        },
+                    },
                 },
                 53: {
                     "name": "Initial state",
@@ -195,6 +273,9 @@ class Component:
                     },
                 },
                 57: 56,
+                122: {
+                    "name": "Angle (deg)",
+                }
             },
         },
         "txt": {
@@ -211,13 +292,196 @@ class Component:
             },
         },
         "txt_maxl":{
-            "name": "Max. Size",
+            "name": "Max. Text Size",
             "struct": "i",
-            "ignore": True,
-            "txt": {
-                -1: {
-                    "ignore": False,
+            "type": {
+                52: {
+                    "sta": {
+                        0 : {
+                            "ignore": True,
+                        },
+                    },
                 },
+            },
+        },
+        "isbr": {
+            "struct": "i",
+            "name": "Word wrap",
+            "vis": True,
+            "mapping": {
+                0: "disabled",
+                1: "enabled",
+            },
+        },
+        "vvs0": {
+            "struct": "i",
+            "name": "Significant digits left",
+            "vis": True,
+            "type": {
+                55: {# Scrolling Text
+                    "ignore": True,
+                },
+                122: {# Gauge
+                    "model": {
+                        -1: {
+                            "ignore": True,
+                        },
+                        "P": {
+                            "name": "Head width"
+                        },
+                    },
+                },
+            },
+        },
+        "vvs1": {
+            "struct": "i",
+            "name": "Significant digits right",
+            "vis": True,
+            "type": {
+                55: {# Scrolling Text
+                    "ignore": True,
+                },
+                122: {  # Gauge
+                    "model": {
+                        -1: {
+                            "ignore": True,
+                        },
+                        "P": {
+                            "name": "Center width"
+                        },
+                    },
+                },
+            },
+        },
+        "vvs2": {
+            "struct": "i",
+            "vis": True,
+            "type": {
+                55: {# Scrolling Text
+                    "ignore": True,
+                },
+                122: {  # Gauge
+                    "model": {
+                        -1: {
+                            "ignore": True,
+                        },
+                        "P": {
+                            "name": "Foot width"
+                        },
+                    },
+                },
+            },
+        },
+        "vvs3": {
+            "struct": "i",
+            "vis": True,
+            "type": {
+                55: {# Scrolling Text
+                    "ignore": True,
+                },
+            },
+        },
+        "lenth": {
+            "struct": "i",
+            "name": "Significant digits shown",
+            "vis": True,
+            "mapping": {
+                0: "all",
+            },
+        },
+        "format": {
+            "struct": "i",
+            "name": "Format",
+            "vis": True,
+            "mapping": {
+                0: "decimal",
+                1: "hexadecimal",
+                2: "decimal with digit grouping"
+            },
+            "type": {
+                122: {# Gauge
+                    "name": "Angle offset",
+                    "mapping": dict(),
+                },
+            },
+        },
+        "tim": {
+            "struct": "i",
+            "name": "Period (ms)",
+            "type": {
+                -1: {
+                    "vis": True,
+                },
+                51: {# Timer
+                    "vis": False,
+                },
+            },
+        },
+        "en": {
+            "struct": "i",
+            "name": "Enabled",
+            "mapping": {
+                0: "no",
+                1: "yes",
+            },
+            "type": {
+                -1: {
+                    "vis": True,
+                },
+                51: {# Timer
+                    "vis": False,
+                },
+            },
+        },
+        "dis": {
+            "struct": "i",
+            "name": "Corner Radius (Perc.)",
+            "vis": True,
+            "model": {
+                -1: {
+                    "ignore": True,
+                },
+                "P": {
+                    "ignore": False,
+                    "type": {
+                        0: {  # Waveform
+                            "ignore": True,
+                        },
+                        122: {  # Gauge
+                            "ignore": True,
+                        },
+                    },
+                },
+            },
+        },
+        "spax": {
+            "struct": "i",
+            "name": "Horizontal Spacing",
+            "vis": True,
+        },
+        "spay": {
+            "struct": "i",
+            "name": "Vertical Spacing",
+            "vis": True,
+        },
+        "xcen": {
+            "struct": "i",
+            "name": "Horizontal Alignment",
+            "vis": True,
+            "mapping": {
+                0: "left",
+                1: "center",
+                2: "right",
+            },
+        },
+        "ycen": {
+            "struct": "i",
+            "name": "Vertical Alignment",
+            "vis": True,
+            "mapping": {
+                0: "top",
+                1: "center",
+                2: "bottom",
             },
         },
         "x": {
@@ -279,8 +543,35 @@ class Component:
             },
         },
         "bco": {
-            "name": "Background Color",
+            "name": "Back. Color",
             "struct": "i",
+            "vis": True,
+            "sta": {
+                0: {
+                    "ignore": True,
+                },
+                2: 0,
+            },
+            "type": {
+                53: {# Button
+                    "name": "Back. Color (Unpressed)",
+                }
+            }
+        },
+        "bco1": {
+            "name": "Slided Back. Color",
+            "struct": "i",
+            "vis": True,
+            "sta": {
+                0: {
+                    "ignore": True,
+                },
+                2: 0,
+            },
+        },
+        "bco2": {
+            "struct": "i",
+            "name": "Back. Color (Pressed)",
             "vis": True,
             "sta": {
                 0: {
@@ -309,6 +600,21 @@ class Component:
                 98: 53,
             },
         },
+        "pco0": {
+            "struct": "i",
+            "name": "Channel 0 Color",
+            "vis": True,
+        },
+        "pco1": {
+            "struct": "i",
+            "name": "Channel 1 Color",
+            "vis": True,
+            "ch": {
+                1: {
+                    "ignore": True,
+                },
+            },
+        },
         "pco2": {
             "name": "Font Color (Pressed)",
             "struct": "i",
@@ -323,10 +629,37 @@ class Component:
                     },
                 },
                 98: 53,
+                122: {# Gauge
+                    "name": "Channel 2 Color",
+                    "ch": {
+                        1: {
+                            "ignore": True,
+                        },
+                        2: {
+                            "ignore": True,
+                        },
+                    },
+                },
+            },
+        },
+        "pco3": {
+            "struct": "i",
+            "name": "Channel 3 Color",
+            "vis": True,
+            "ch": {
+                1: {
+                    "ignore": True,
+                },
+                2: {
+                    "ignore": True,
+                },
+                3: {
+                    "ignore": True,
+                },
             },
         },
         "pic": {
-            "name": "Background Picture ID",
+            "name": "Back. Picture ID",
             "struct": "i",
             "vis": True,
             "sta": {
@@ -355,8 +688,19 @@ class Component:
                 },
             },
         },
+        "pic1": {
+            "name": "Slided Back. Picture ID",
+            "struct": "i",
+            "vis": True,
+            "sta": {
+                0: {
+                    "ignore": True,
+                },
+                1: 0,
+            },
+        },
         "pic2": {
-            "name": "Background Picture ID (Pressed)",
+            "name": "Back. Picture ID (Pressed)",
             "struct": "i",
             "ignore": True,
             "vis": True,
@@ -374,35 +718,109 @@ class Component:
             },
         },
         "picc": {
-            "name": "Cropped Background Picture ID",
+            "name": "Cropped Back. Picture ID",
             "struct": "i",
             "vis": True,
             "sta": {
-                0: {
-                    "model": {
-                        "P": {
-                            "ignore": True,
-                        },
-                    },
+                1: {
+                    "ignore": True,
                 },
+                2: 1,
+            },
+            "type": {
+                53: {
+                    "name": "Cropped Back. Picture ID (Unpressed)"
+                },
+                98: 53,
+            },
+        },
+        "picc1": {
+            "name": "Cropped Slided Back. Picture ID",
+            "struct": "i",
+            "vis": True,
+            "sta": {
                 1: {
                     "ignore": True,
                 },
                 2: 1,
             },
         },
+        "picc2": {
+            "name": "Cropped Back. Picture ID (Pressed)",
+            "struct": "i",
+            "vis": True,
+            "sta": {
+                1: {
+                    "ignore": True,
+                },
+                2: 1,
+            },
+        },
+        "bpic": {
+            "struct": "i",
+            "name": "Background Picture ID",
+            "vis": True,
+        },
+        "ppic": {
+            "struct": "i",
+            "name": "Foreground Picture ID",
+            "vis": True,
+        },
+
         "dez": {
             "name": "Direction",
             "struct": "i",
+            "vis": True,
             "mapping": {
                 0: "horizontal",
                 1: "vertical",
             },
+        },
+        "dir": {
+            "struct": "i",
+            "name": "Direction",
+            "vis": True,
             "type": {
+                55: {# Scrolling Text
+                    "mapping": {
+                        0: "Left->Right",
+                        1: "Right->Left",
+                        2: "Top->Bottom",
+                        3: "Bottom->Top",
+                    },
+                },
+                0: {# Waveform
+                    "name": "Flow Direction",
+                    "mapping": {
+                        0: "Left->Right",
+                        1: "Right->Left",
+                        2: "Right aligned",
+                    },
+                },
+            },
+        },
+        "borderc": {
+            "struct": "i",
+            "name": "Border Color",
+            "vis": True,
+            "style": {
                 -1: {
                     "ignore": True,
                 },
-                106: {
+                1: {
+                    "ignore": False,
+                },
+            },
+        },
+        "borderw": {
+            "struct": "i",
+            "name": "Border Width",
+            "vis": True,
+            "style": {
+                -1: {
+                    "ignore": True,
+                },
+                1: {
                     "ignore": False,
                 },
             },
@@ -602,13 +1020,58 @@ class Component:
             "struct": "i",
             "ignore": True
         },
+        "ch": {
+            "struct": "i",
+            "name": "Channel count",
+        },
+        "gdc": {
+            "struct": "i",
+            "name": "Grid Color",
+            "vis": True,
+        },
+        "gdw": {
+            "struct": "i",
+            "name": "Grid hor. spacing",
+            "vis": True,
+        },
+        "gdh": {
+            "struct": "i",
+            "name": "Grid ver. spacing",
+            "vis": True,
+        },
+        "wid": {
+            "struct": "i",
+            "type": {
+                1: {# Slider
+                    "name": "Cursor width",
+                },
+            },
+        },
+        "hig": {
+            "struct": "i",
+            "vis": True,
+            "type": {
+                1: {# Slider
+                    "name": "Cursor height",
+                },
+                122: {# Gauge
+                    "name": "Center circle dia.",
+                },
+            },
+        },
         "up": {
             "name": "Swide up page ID",
             "struct": "i",
+            "mapping": {
+                255: "Disabled",
+            },
             "type": {
                 122: {  # Gauge
                     "vis": True,
-                    "name": "Gauge Head Length"
+                    "name": "Head Length",
+                    "mapping": {
+                        32767: "auto",
+                    },
                 },
             },
             "model": {
@@ -621,10 +1084,13 @@ class Component:
         "down": {
             "name": "Swide down page ID",
             "struct": "i",
+            "mapping": {
+                255: "Disabled",
+            },
             "type": {
                 122: {  # Gauge
                     "vis": True,
-                    "name": "Gauge Head Length"
+                    "name": "Foot Length"
                 },
             },
             "model": {
@@ -637,6 +1103,28 @@ class Component:
         "left": {
             "name": "Swide left page ID",
             "struct": "i",
+            "mapping": {
+                255: "Disabled",
+            },
+            "type": {
+                122: {  # Gauge
+                    "vis": True,
+                    "name": "Head off-center"
+                },
+            },
+            "model": {
+                "T": {
+                    "ignore": True,
+                },
+                "K": "T",
+            },
+        },
+        "right": {
+            "name": "Swide right page ID",
+            "struct": "i",
+            "mapping": {
+                255: "Disabled",
+            },
             "type": {
                 122: {  # Gauge
                     "vis": True,
@@ -650,15 +1138,25 @@ class Component:
                 "K": "T",
             },
         },
-        "right": {
-            "name": "Swide right page ID",
+        "objWid": {
             "struct": "i",
-            "model": {
-                "T": {
-                    "ignore": True,
-                },
-                "K": "T",
-            },
+            "ignore": True,
+        },
+        "objHig": {
+            "struct": "i",
+            "ignore": True,
+        },
+        "inittrue": {
+            "struct": "i",
+            "ignore": True,
+        },
+        "molloc": {
+            "struct": "i",
+            "ignore": True,
+        },
+        "molloc_s": {
+            "struct": "i",
+            "ignore": True,
         },
     }
 
@@ -783,7 +1281,9 @@ class Component:
                         if attData in attProperties["mapping"]:
                             attData = attProperties["mapping"][attData]
                     attributes[attName] = attData
-            elif attName != "model" and (includeUnknown or customInclude):
+            elif attName != "model" and (includeUnknown or attName in customInclude):
+                if not attName in customInclude:
+                    attName = "UNKNWN " + attName
                 if len(attData) > 4 or includeUnknown == 2:#raw
                     attData = attData.decode("ansi")
                 elif includeUnknown == 3:#hex
