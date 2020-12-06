@@ -607,7 +607,7 @@ Page TC_Settings
         Number nCoil1MinOff
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 101
             
             Events
                 Touch Press Event
@@ -628,7 +628,7 @@ Page TC_Settings
         Float nCoil1Duty
             Properties
                 Scope           : Local
-                Initial Value   : 0
+                Initial Value   : 101
                 Divide by [10^x]: 1
             
             Events
@@ -671,7 +671,7 @@ Page TC_Settings
         Number nCoil2MinOff
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 102
             
             Events
                 Touch Press Event
@@ -692,7 +692,7 @@ Page TC_Settings
         Float nCoil2Duty
             Properties
                 Scope           : Local
-                Initial Value   : 0
+                Initial Value   : 102
                 Divide by [10^x]: 1
             
             Events
@@ -735,7 +735,7 @@ Page TC_Settings
         Number nCoil3MinOff
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 103
             
             Events
                 Touch Press Event
@@ -756,7 +756,7 @@ Page TC_Settings
         Float nCoil3Duty
             Properties
                 Scope           : Local
-                Initial Value   : 0
+                Initial Value   : 103
                 Divide by [10^x]: 1
             
             Events
@@ -799,7 +799,7 @@ Page TC_Settings
         Number nCoil4MinOff
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 104
             
             Events
                 Touch Press Event
@@ -820,7 +820,7 @@ Page TC_Settings
         Float nCoil4Duty
             Properties
                 Scope           : Local
-                Initial Value   : 0
+                Initial Value   : 104
                 Divide by [10^x]: 1
             
             Events
@@ -863,7 +863,7 @@ Page TC_Settings
         Number nCoil5MinOff
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 105
             
             Events
                 Touch Press Event
@@ -884,7 +884,7 @@ Page TC_Settings
         Float nCoil5Duty
             Properties
                 Scope           : Local
-                Initial Value   : 0
+                Initial Value   : 105
                 Divide by [10^x]: 1
             
             Events
@@ -927,7 +927,7 @@ Page TC_Settings
         Number nCoil6MinOff
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 106
             
             Events
                 Touch Press Event
@@ -948,7 +948,7 @@ Page TC_Settings
         Float nCoil6Duty
             Properties
                 Scope           : Local
-                Initial Value   : 0
+                Initial Value   : 106
                 Divide by [10^x]: 1
             
             Events
@@ -1561,7 +1561,7 @@ Page TC_Settings
         Number nCoil1Voices
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 1
             
             Events
                 Touch Press Event
@@ -1582,7 +1582,7 @@ Page TC_Settings
         Number nCoil2Voices
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 2
             
             Events
                 Touch Press Event
@@ -1603,7 +1603,7 @@ Page TC_Settings
         Number nCoil3Voices
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 3
             
             Events
                 Touch Press Event
@@ -1624,7 +1624,7 @@ Page TC_Settings
         Number nCoil4Voices
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 4
             
             Events
                 Touch Press Event
@@ -1645,7 +1645,7 @@ Page TC_Settings
         Number nCoil5Voices
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 5
             
             Events
                 Touch Press Event
@@ -1666,7 +1666,7 @@ Page TC_Settings
         Number nCoil6Voices
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 6
             
             Events
                 Touch Press Event

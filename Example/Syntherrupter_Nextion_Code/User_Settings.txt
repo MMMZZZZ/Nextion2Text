@@ -509,7 +509,7 @@ Page User_Settings
         Float user0Duty
             Properties
                 Scope           : Local
-                Initial Value   : 0
+                Initial Value   : 60
                 Divide by [10^x]: 1
             
             Events
@@ -543,7 +543,7 @@ Page User_Settings
         Number user0Ontime
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 100
             
             Events
                 Touch Press Event
@@ -607,7 +607,7 @@ Page User_Settings
         Float user1Duty
             Properties
                 Scope           : Local
-                Initial Value   : 0
+                Initial Value   : 80
                 Divide by [10^x]: 1
             
             Events
@@ -640,7 +640,7 @@ Page User_Settings
         Number user1Ontime
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 8211
             
             Events
                 Touch Press Event
@@ -703,7 +703,7 @@ Page User_Settings
         Float user2Duty
             Properties
                 Scope           : Local
-                Initial Value   : 0
+                Initial Value   : 100
                 Divide by [10^x]: 1
             
             Events
@@ -737,7 +737,7 @@ Page User_Settings
         Number user2Ontime
             Properties
                 Scope        : Local
-                Initial Value: 0
+                Initial Value: 200
             
             Events
                 Touch Press Event
