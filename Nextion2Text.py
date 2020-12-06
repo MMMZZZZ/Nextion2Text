@@ -1111,6 +1111,8 @@ if __name__ == '__main__':
                         help="Path to the HMI source file")
     parser.add_argument("-o", "--output_dir", metavar="TEXT_FOLDER", type=str, required=True,
                         help="Path to the folder for the generated text files.")
+    parser.add_argument("-d", "--del_out", action="store_true",
+                        help="Optional flag to delete the content of the output folder before creating the new files.")
     parser.add_argument("-e", "--file_ext", metavar="EXTENSION", type=str, required=False, default=".txt",
                         help="Optional Extension that is added to the text files (default: \".txt\")")
     parser.add_argument("-s", "--stats", action="store_true",
@@ -1191,6 +1193,28 @@ if __name__ == '__main__':
     if not hmiTextFileExt.startswith("."):
         hmiTextFileExt = "." + hmiTextFileExt
 
+    if hmiTextFolder.exists() and args.del_out:
+        done = False
+        cwd = hmiTextFolder
+        while not done:
+            content = cwd.iterdir()
+            # check if iterator is empty.
+            empty = True
+            for f in content:
+                empty = False
+                if f.is_file():
+                    f.unlink()
+                elif f.is_dir():
+                    cwd =  f
+            if empty:
+                if cwd == hmiTextFolder:
+                    done = True
+                elif cwd.is_relative_to(hmiTextFolder):
+                    cwd.rmdir()
+                    cwd = cwd.parent
+                else:
+                    print("Something went wrong while recursively deleting all content of the output folder. "
+                          "Please reduce your file system voodoo.")
     hmiTextFolder.mkdir(exist_ok=True)
 
     if args.json:
