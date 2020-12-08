@@ -1272,8 +1272,6 @@ class Component:
         # The interpretation of any attribute can depend on other attributes. (see code below)
         dependencies = set(Component.attributes.keys())
         dependencies.add("model")
-        if self.rawData["att"]["type"] == 122 and includeVisual:
-            print("gounf")
         for attName, attData in self.rawData["att"].items():
             if attName in customExclude:
                 continue
