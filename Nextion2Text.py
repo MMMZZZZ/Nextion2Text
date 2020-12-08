@@ -1266,6 +1266,8 @@ class Component:
         # The interpretation of any attribute can depend on other attributes. (see code below)
         dependencies = set(Component.attributes.keys())
         dependencies.add("model")
+        if self.rawData["att"]["type"] == 0 and includeVisuals:
+            print("gounf")
         for attName, attData in self.rawData["att"].items():
             if attName in customExclude:
                 continue
@@ -1657,7 +1659,7 @@ if __name__ == '__main__':
                              "visual properties and/or unknown properties, too, specify \"visual\" and/or "
                              "\"unknown\". By default, unknown attributes up to 4 bytes length are interpreted as "
                              "integer while longer attribute values are interpreted as string. Alternatively you can "
-                             "use \"unknown_hex\" to get all unknonw values as hex, or \"unknown_raw\" to get all of "
+                             "use \"unknown_hex\" to get all unknown values as hex, or \"unknown_raw\" to get all of "
                              "them as characters (including NUL characters and other unprintable ones).")
     parser.add_argument("-c", "--custom_dict", metavar="PY_FILE", required=False, type=str, default="",
                         help="Optional. You can create your own attributes and codeEvents dictionaries instead or in "
