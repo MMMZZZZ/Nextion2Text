@@ -1256,7 +1256,7 @@ class Component:
         return result
 
     def parseRawProperties(self, customInclude=tuple(), customExclude=tuple(),
-                           includeVisuals:bool=False, includeUnknown:int=0,
+                           includeVisual:bool=False, includeUnknown:int=0,
                            inplace=True, emptyEvents=False, **kwargs):
 
         data = dict()
@@ -1266,7 +1266,7 @@ class Component:
         # The interpretation of any attribute can depend on other attributes. (see code below)
         dependencies = set(Component.attributes.keys())
         dependencies.add("model")
-        if self.rawData["att"]["type"] == 122 and includeVisuals:
+        if self.rawData["att"]["type"] == 122 and includeVisual:
             print("gounf")
         for attName, attData in self.rawData["att"].items():
             if attName in customExclude:
@@ -1303,7 +1303,7 @@ class Component:
                             attProperties.pop(d)
                 if  customInclude and attName not in customInclude:
                     attProperties["ignore"] = True
-                if ("vis" in attProperties and attProperties["vis"]) and not includeVisuals:
+                if ("vis" in attProperties and attProperties["vis"]) and not includeVisual:
                     attProperties["ignore"] = True
                 if (not "ignore" in attProperties or not attProperties["ignore"]):
                     if "name" in attProperties:
@@ -1687,9 +1687,9 @@ if __name__ == '__main__':
         parser.error("HMI file not found.")
 
     includeUnknown = 0
-    includeVisuals = False
+    includeVisual = False
     if "visual" in args.properties:
-        includeVisuals = True
+        includeVisual = True
     if "unknown" in args.properties:
         includeUnknown = 1
     elif "unknown_hex" in args.properties:
@@ -1770,7 +1770,7 @@ if __name__ == '__main__':
             json.dump({"Program.s": hmi.programS}, f, indent=4)
     for page in hmi.pages:
         name = page.components[0].rawData["att"]["objname"]#str(page)
-        text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown, includeVisuals=includeVisuals, emptyEvents=args.empty_events)
+        text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown, includeVisual=includeVisual, emptyEvents=args.empty_events)
         texts[name] = text
         compCount[name] = len(page.components)
         codeLines[name] = []
