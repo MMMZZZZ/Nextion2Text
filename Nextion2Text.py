@@ -411,7 +411,7 @@ class Component:
             "type": {
                 122: {# Gauge
                     "name": "Angle offset",
-                    "mapping": dict(),
+                    "mapping": dict(), #disable default mapping
                 },
             },
         },
