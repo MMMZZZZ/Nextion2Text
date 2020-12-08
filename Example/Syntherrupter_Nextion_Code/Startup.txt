@@ -1,103 +1,103 @@
 Page Startup
+    Attributes
+        ID               : 0
+        Scope            : local
+        Send Component ID: disabled
+        Locked           : no
+    
     Events
         Preinitialize Event
             //
             // Keep Startup page black until serial communication is successfully established.
             vis 255,0
         
-        Postinitialize Event
-            
-        Touch Press Event
-            
+Variable (int32) comOk
+    Attributes
+        ID    : 3
+        Scope : local
+        Locked: no
+        Value : 0
+    
+Text tNoConfig
+    Attributes
+        ID                 : 1
+        Scope              : local
+        Send Component ID  : disabled
+        Locked             : no
+        Associated Keyboard: none
+        Text               : Warning! EEPROM contains no vaild configuration.\r\n      Please go to settings and check ALL values.
+        Max. Text Size     : 100
+    
+    Events
         Touch Release Event
-            
-        Page Exit Event
-            
-    Components
-        Text tNoConfig
-            Properties
-                Scope       : Local
-                Initial Text: "Warning! EEPROM contains no vaild configuration.\r\n      Please go to settings and check ALL values."
-                Max. length : 100
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    // Do the same thing as on a normal start. This is just a note to the user without effect on the behavior during operation.
-                    click pStartup,0
-                
-        Picture pStartup
-            Properties
-                Scope: Local
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    // If one of the user passwords is blank, do auto login to this user.
-                    if(User_Settings.u0Code.txt==User_Settings.tAutoCode.txt)
-                    {
-                        Identification.tTitle.txt=User_Settings.tAutoCode.txt
-                    }
-                    if(User_Settings.u1Code.txt==User_Settings.tAutoCode.txt)
-                    {
-                        Identification.tTitle.txt=User_Settings.tAutoCode.txt
-                    }
-                    if(User_Settings.u2Code.txt==User_Settings.tAutoCode.txt)
-                    {
-                        Identification.tTitle.txt=User_Settings.tAutoCode.txt
-                    }
-                    page Identification
-                
-        Variable comOk
-            Properties
-                Scope         : Local
-                Type          : int32
-                Initial Value : 0
-            
-        Text tNxtFW
-            Properties
-                Scope       : Local
-                Initial Text: "Nextion Firmware:"
-                Max. length : 20
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    
-        Text tNxtFWVersion
-            Properties
-                Scope       : Local
-                Initial Text: "v3.1.0-beta.6"
-                Max. length : 20
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    
-        Text tTivaFW
-            Properties
-                Scope       : Local
-                Initial Text: "Tiva Firmware:"
-                Max. length : 20
-            
-            Events
-                Touch Press Event
-                    
-                Touch Release Event
-                    
-        Text tTivaFWVersion
-            Properties
-                Scope       : Local
-                Initial Text: "v0.0.0-beta.0"
-                Max. length : 20
-            
-            Events
-                Touch Press Event
-                    // Will be set by the microcontroller on startup.
-                
-                Touch Release Event
-                    
+            // Do the same thing as on a normal start. This is just a note to the user without effect on the behavior during operation.
+            click pStartup,0
+        
+Text tNxtFW
+    Attributes
+        ID                 : 4
+        Scope              : local
+        Send Component ID  : disabled
+        Locked             : no
+        Associated Keyboard: none
+        Text               : Nextion Firmware:
+        Max. Text Size     : 20
+    
+Text tNxtFWVersion
+    Attributes
+        ID                 : 5
+        Scope              : local
+        Send Component ID  : disabled
+        Locked             : no
+        Associated Keyboard: none
+        Text               : v3.1.0-beta.6
+        Max. Text Size     : 20
+    
+Text tTivaFW
+    Attributes
+        ID                 : 6
+        Scope              : local
+        Send Component ID  : disabled
+        Locked             : no
+        Associated Keyboard: none
+        Text               : Tiva Firmware:
+        Max. Text Size     : 20
+    
+Text tTivaFWVersion
+    Attributes
+        ID                 : 7
+        Scope              : local
+        Send Component ID  : disabled
+        Locked             : no
+        Associated Keyboard: none
+        Text               : v0.0.0-beta.0
+        Max. Text Size     : 20
+    
+    Events
+        Touch Press Event
+            // Will be set by the microcontroller on startup.
+        
+Picture pStartup
+    Attributes
+        ID               : 2
+        Scope            : local
+        Send Component ID: disabled
+        Locked           : no
+    
+    Events
+        Touch Release Event
+            // If one of the user passwords is blank, do auto login to this user.
+            if(User_Settings.u0Code.txt==User_Settings.tAutoCode.txt)
+            {
+                Identification.tTitle.txt=User_Settings.tAutoCode.txt
+            }
+            if(User_Settings.u1Code.txt==User_Settings.tAutoCode.txt)
+            {
+                Identification.tTitle.txt=User_Settings.tAutoCode.txt
+            }
+            if(User_Settings.u2Code.txt==User_Settings.tAutoCode.txt)
+            {
+                Identification.tTitle.txt=User_Settings.tAutoCode.txt
+            }
+            page Identification
+        
