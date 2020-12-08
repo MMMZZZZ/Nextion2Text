@@ -1,5 +1,12 @@
+"""
+TFTTool by Max Zuidberg
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
+"""
+
 from string import whitespace
-import os
 import sys
 from pathlib import Path
 import struct
@@ -7,6 +14,7 @@ from typing import List
 import argparse
 import copy
 import json
+
 
 class IndentList(list):
     def __init__(self, *args, **kwargs):
@@ -59,7 +67,8 @@ class Component:
         "type": {
             "name": "Type",
             "struct": "i",
-            "mapping": {#Needs to contain all types, even if some get overridden afterwards. Order here is used for sorting later
+            "mapping": {
+                #Needs to contain all types, even if some get overridden afterwards. Order here is used for sorting later
                 121: "Page",
                 52:  "Variable",
                 54:  "Number",
@@ -174,7 +183,7 @@ class Component:
                         3: "transparent",
                     },
                     "type": {
-                        121: {
+                        121: {# Page
                             "mapping": {
                                 0: "no background (transparent)",
                                 1: "solid color",
@@ -232,23 +241,24 @@ class Component:
         },
         "font": {
             "struct": "i",
-            "name": "Font ID"
+            "name": "Font ID",
+            "vis": True,
         },
         "pw": {
             "struct": "i",
             "name": "Input Type",
             "vis": True,
             "mapping": {
-                0: "Character",
-                1: "Password",
+                0: "character",
+                1: "password",
             },
         },
         "val": {
-            "name": "Initial value",
+            "name": "Value",
             "struct": "i",
             "type": {
                 1: {
-                    "name": "Initial position",
+                    "name": "Position",
                 },
                 52: {
                     "sta": {
@@ -258,18 +268,18 @@ class Component:
                     },
                 },
                 53: {
-                    "name": "Initial state",
+                    "name": "State",
                     "mapping": {
-                        0: "Unpressed",
-                        1: "Pressed",
+                        0: "unpressed",
+                        1: "pressed",
                     },
                 },
                 98: 53,
                 56: {
-                    "name": "Initial state",
+                    "name": "State",
                     "mapping": {
-                        0: "Unselected",
-                        1: "Selected",
+                        0: "unpressed",
+                        1: "pressed",
                     },
                 },
                 57: 56,
@@ -401,7 +411,7 @@ class Component:
             "type": {
                 122: {# Gauge
                     "name": "Angle offset",
-                    "mapping": dict(),
+                    "mapping": dict(), #disable default mapping
                 },
             },
         },
@@ -489,45 +499,45 @@ class Component:
             "struct": "i",
             "vis": True,
             "type": {
-                121: {
+                121: {# Page
                     "ignore": True,
                 },
             },
-            "model": {
-                "P": {
-                    "drag": {
-                        1: {
-                            "name": "Initial x coord."
-                        },
-                    },
-                },
-            },
+            #"model": {
+            #    "P": {
+            #        "drag": {
+            #            1: {
+            #                "name": "Initial x coord."
+            #            },
+            #        },
+            #    },
+            #},
         },
         "y": {
             "name": "y coordinate",
             "struct": "i",
             "vis": True,
             "type": {
-                121: {
+                121: {# Page
                     "ignore": True,
                 },
             },
-            "model": {
-                "P": {
-                    "drag": {
-                        1: {
-                            "name": "Initial y coord."
-                        },
-                    },
-                },
-            },
+            #"model": {
+            #    "P": {
+            #        "drag": {
+            #            1: {
+            #                "name": "Initial y coord."
+            #            },
+            #        },
+            #    },
+            #},
         },
         "w": {
             "name": "Width",
             "struct": "i",
             "vis": True,
             type: {
-                121: {
+                121: {# Page
                     "ignore": True,
                 },
             },
@@ -537,7 +547,7 @@ class Component:
             "struct": "i",
             "vis": True,
             "type": {
-                121: {
+                121: {# Page
                     "ignore": True,
                 },
             },
@@ -629,14 +639,14 @@ class Component:
                     },
                 },
                 98: 53,
-                122: {# Gauge
+                0: {# Waveform
                     "name": "Channel 2 Color",
                     "ch": {
-                        1: {
-                            "ignore": True,
+                        3: {
+                            "ignore": False,
                         },
-                        2: {
-                            "ignore": True,
+                        4: {
+                            "ignore": False,
                         },
                     },
                 },
@@ -646,15 +656,10 @@ class Component:
             "struct": "i",
             "name": "Channel 3 Color",
             "vis": True,
+            "ignore": True,
             "ch": {
-                1: {
-                    "ignore": True,
-                },
-                2: {
-                    "ignore": True,
-                },
-                3: {
-                    "ignore": True,
+                4: {
+                    "ignore": False,
                 },
             },
         },
@@ -783,18 +788,18 @@ class Component:
             "type": {
                 55: {# Scrolling Text
                     "mapping": {
-                        0: "Left->Right",
-                        1: "Right->Left",
-                        2: "Top->Bottom",
-                        3: "Bottom->Top",
+                        0: "left->right",
+                        1: "right->left",
+                        2: "top->bottom",
+                        3: "bottom->top",
                     },
                 },
                 0: {# Waveform
                     "name": "Flow Direction",
                     "mapping": {
-                        0: "Left->Right",
-                        1: "Right->Left",
-                        2: "Right aligned",
+                        0: "left->right",
+                        1: "right->left",
+                        2: "right aligned",
                     },
                 },
             },
@@ -828,6 +833,7 @@ class Component:
         "mode": {
             "name": "Direction",
             "struct": "i",
+            "vis": True,
             "mapping": {
                 0: "horizontal",
                 1: "vertical",
@@ -875,7 +881,7 @@ class Component:
                 "K": "T",
                 "P": {
                     "type": {
-                        121: {
+                        121: {# Page
                             "ignore": True
                         },
                     },
@@ -892,7 +898,7 @@ class Component:
                 "K": "T",
                 "P": {
                     "type": {
-                        121: {
+                        121: {# Page
                             "ignore": True
                         },
                     },
@@ -952,9 +958,14 @@ class Component:
             },
         },
         "sendkey": {
-            "name": "Dunno",
+            "name": "Send Component ID",
             "struct": "i",
-            "ignore": True,
+            "mapping": {
+                0: "disabled",
+                1: "on release",
+                2: "on press",
+                3: "on press and release",
+            },
         },
         "movex": {
             "name": "",
@@ -1041,9 +1052,24 @@ class Component:
         },
         "wid": {
             "struct": "i",
+            "vis": True,
             "type": {
                 1: {# Slider
                     "name": "Cursor width",
+                    "mapping": {
+                        255: "auto",
+                    },
+                },
+                122: {# Gauge
+                    "model": {
+                        -1: {
+                            "ignore": True,
+                        },
+                        "P": {
+                            "ignore": False,
+                            "name": "Gauge Thickness",
+                        },
+                    },
                 },
             },
         },
@@ -1055,7 +1081,15 @@ class Component:
                     "name": "Cursor height",
                 },
                 122: {# Gauge
-                    "name": "Center circle dia.",
+                    "model": {
+                        -1: {
+                            "ignore": True,
+                        },
+                        "P": {
+                            "ignore": False,
+                            "name": "Center circle dia.",
+                        },
+                    },
                 },
             },
         },
@@ -1063,7 +1097,7 @@ class Component:
             "name": "Swide up page ID",
             "struct": "i",
             "mapping": {
-                255: "Disabled",
+                255: "disabled",
             },
             "type": {
                 122: {  # Gauge
@@ -1085,7 +1119,7 @@ class Component:
             "name": "Swide down page ID",
             "struct": "i",
             "mapping": {
-                255: "Disabled",
+                255: "disabled",
             },
             "type": {
                 122: {  # Gauge
@@ -1104,7 +1138,7 @@ class Component:
             "name": "Swide left page ID",
             "struct": "i",
             "mapping": {
-                255: "Disabled",
+                255: "disabled",
             },
             "type": {
                 122: {  # Gauge
@@ -1123,7 +1157,7 @@ class Component:
             "name": "Swide right page ID",
             "struct": "i",
             "mapping": {
-                255: "Disabled",
+                255: "disabled",
             },
             "type": {
                 122: {  # Gauge
@@ -1173,7 +1207,7 @@ class Component:
 
     def __repr__(self):
         repr = self.rawData["att"]["objname"]
-        data = self.parseRawProperties(customInclude={"type"}, inplace=False)
+        data = self.parseRawProperties(customInclude=("type",), inplace=False)
         if data and "Attributes" in data and Component.attributes["type"]["name"] in data["Attributes"]:
             repr = data["Attributes"][Component.attributes["type"]["name"]] + " " + repr
         return repr
@@ -1182,7 +1216,7 @@ class Component:
         return "".join(self.getTextLines(*args, **kwargs))
 
     def getTextLines(self, indentLevel=0, indent=4, emptyLinesLimit=1,
-                     customExclude={"type", "objname"}, **kwargs):
+                     customExclude=("type", "objname"), **kwargs):
         # Initialize resulting IndentList
         result = IndentList()
         result.indentStr = " "
@@ -1227,9 +1261,10 @@ class Component:
             result.appendIndentLine("")
         return result
 
-    def parseRawProperties(self, customInclude=set(), customExclude=set(),
-                           includeVisuals:bool=False, includeUnknown:int=0,
-                           inplace=True, emptyEvents=False, **kwargs):
+    def parseRawProperties(self, customInclude=tuple(), customExclude=tuple(),
+                           includeVisual:bool=False, includeUnknown:int=0,
+                           inplace=True, emptyEvents=False,
+                           keepNames=False, keepValues=False, **kwargs):
 
         data = dict()
         # Model name is considered as an "attribute", too. (needed to know the right interpretation; see below)
@@ -1249,32 +1284,36 @@ class Component:
                 attProperties = copy.deepcopy(Component.attributes[attName])
                 done = False
                 while not done:
+                    print("nodo")
                     done = True
-                    for d in dependencies:
-                        if d in attProperties:
+                    keys = [k for k in attProperties.keys()]
+                    for d in keys:
+                        if d in dependencies:
                             done = False
-                            if d in self.rawData["att"] and (self.rawData["att"][d] in attProperties[d] or -1 in attProperties):
-                                try:
-                                    i = self.rawData["att"][d]
-                                except:
+                            if d in self.rawData["att"]:
+                                val = self.rawData["att"][d]
+                                foundVal = True
+                                if val in attProperties[d]:
+                                    i = val
+                                elif  -1 in attProperties[d]:
                                     i = -1
-                                while not type(attProperties[d][i]) is dict:
-                                    vOld = i
-                                    i = attProperties[d][i]
-                                    attProperties[d].pop(vOld)
-                                try:
+                                else:
+                                    foundVal = False
+                                if foundVal:
+                                    while not type(attProperties[d][i]) is dict:
+                                        vOld = i
+                                        i = attProperties[d][i]
+                                        attProperties[d].pop(vOld)
                                     attProperties.update(attProperties[d][i])
-                                except:
-                                    print("help")
                             attProperties.pop(d)
                 if  customInclude and attName not in customInclude:
                     attProperties["ignore"] = True
-                if ("vis" in attProperties and attProperties["vis"]) and not includeVisuals:
+                if ("vis" in attProperties and attProperties["vis"]) and not includeVisual:
                     attProperties["ignore"] = True
                 if (not "ignore" in attProperties or not attProperties["ignore"]):
-                    if "name" in attProperties:
+                    if "name" in attProperties and not keepNames:
                         attName = attProperties["name"]
-                    if "mapping" in attProperties:
+                    if "mapping" in attProperties and not keepValues:
                         if attData in attProperties["mapping"]:
                             attData = attProperties["mapping"][attData]
                     attributes[attName] = attData
@@ -1616,6 +1655,12 @@ if __name__ == '__main__':
                         help="Optional Extension that is added to the text files (default: \".txt\")")
     parser.add_argument("-e", "--empty_events", action="store_true",
                         help="Optional flag to include empty events in the output (Excluded by default).")
+    parser.add_argument("-n", "--keep_names", action="store_true",
+                        help="Optional flag to preserve the original names (f.ex. \"bco\" instead of \"Background "
+                             "color\").")
+    parser.add_argument("-v", "--keep_values", action="store_true",
+                        help="Optional flag to preserve the original values (f.ex. \"sta: 0\" instead of \"sta: "
+                             "cropped image\").")
     parser.add_argument("-s", "--stats", action="store_true",
                         help="Optional flag to create a file in the output folder that will include all the statistics "
                              "you see in the command line output.")
@@ -1626,11 +1671,11 @@ if __name__ == '__main__':
     parser.add_argument("-p", "--properties", required=False, nargs="*", default=[],
                         help="Specify the (list of) properties that shall be included in the parsing. "
                              "By default, only known, non-visual properties are included. If you want to include "
-                             "visual properties and/or unknown properties, too, specify \"visuals\", \"unknowns\" or "
-                             "\"all\". By default, unknown attributes up to 4 bytes length are interpreted as integer "
-                             "while longer attribute values are interpreted as string. Alternatively you can use "
-                             "\"unknown_hex\" to get all unknonw values as hex, or \"unknown_raw\" to get all of them "
-                             "as characters (including NUL characters and other unprintable ones).")
+                             "visual properties and/or unknown properties, too, specify \"visual\" and/or "
+                             "\"unknown\". By default, unknown attributes up to 4 bytes length are interpreted as "
+                             "integer while longer attribute values are interpreted as string. Alternatively you can "
+                             "use \"unknown_hex\" to get all unknown values as hex, or \"unknown_raw\" to get all of "
+                             "them as characters (including NUL characters and other unprintable ones).")
     parser.add_argument("-c", "--custom_dict", metavar="PY_FILE", required=False, type=str, default="",
                         help="Optional. You can create your own attributes and codeEvents dictionaries instead or in "
                              "addition to the build-in dictionaries (see -x). Specify the Python file with your "
@@ -1653,9 +1698,9 @@ if __name__ == '__main__':
         parser.error("HMI file not found.")
 
     includeUnknown = 0
-    includeVisuals = False
+    includeVisual = False
     if "visual" in args.properties:
-        includeVisuals = True
+        includeVisual = True
     if "unknown" in args.properties:
         includeUnknown = 1
     elif "unknown_hex" in args.properties:
@@ -1736,7 +1781,9 @@ if __name__ == '__main__':
             json.dump({"Program.s": hmi.programS}, f, indent=4)
     for page in hmi.pages:
         name = page.components[0].rawData["att"]["objname"]#str(page)
-        text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown, includeVisuals=includeVisuals, emptyEvents=args.empty_events)
+        text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown,
+                            includeVisual=includeVisual, emptyEvents=args.empty_events,
+                            keepNames=args.keep_names, keepValues=args.keep_values)
         texts[name] = text
         compCount[name] = len(page.components)
         codeLines[name] = []
