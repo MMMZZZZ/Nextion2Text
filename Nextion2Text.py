@@ -175,7 +175,7 @@ class Component:
                         3: "transparent",
                     },
                     "type": {
-                        121: {
+                        121: {# Page
                             "mapping": {
                                 0: "no background (transparent)",
                                 1: "solid color",
@@ -491,7 +491,7 @@ class Component:
             "struct": "i",
             "vis": True,
             "type": {
-                121: {
+                121: {# Page
                     "ignore": True,
                 },
             },
@@ -510,7 +510,7 @@ class Component:
             "struct": "i",
             "vis": True,
             "type": {
-                121: {
+                121: {# Page
                     "ignore": True,
                 },
             },
@@ -529,7 +529,7 @@ class Component:
             "struct": "i",
             "vis": True,
             type: {
-                121: {
+                121: {# Page
                     "ignore": True,
                 },
             },
@@ -539,7 +539,7 @@ class Component:
             "struct": "i",
             "vis": True,
             "type": {
-                121: {
+                121: {# Page
                     "ignore": True,
                 },
             },
@@ -873,7 +873,7 @@ class Component:
                 "K": "T",
                 "P": {
                     "type": {
-                        121: {
+                        121: {# Page
                             "ignore": True
                         },
                     },
@@ -890,7 +890,7 @@ class Component:
                 "K": "T",
                 "P": {
                     "type": {
-                        121: {
+                        121: {# Page
                             "ignore": True
                         },
                     },
