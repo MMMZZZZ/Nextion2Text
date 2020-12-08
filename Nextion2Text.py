@@ -232,7 +232,8 @@ class Component:
         },
         "font": {
             "struct": "i",
-            "name": "Font ID"
+            "name": "Font ID",
+            "vis": True,
         },
         "pw": {
             "struct": "i",
@@ -629,7 +630,7 @@ class Component:
                     },
                 },
                 98: 53,
-                122: {# Gauge
+                0: {# Waveform
                     "name": "Channel 2 Color",
                     "ch": {
                         3: {
@@ -640,7 +641,6 @@ class Component:
                         },
                     },
                 },
-                0: 122, # Waveform
             },
         },
         "pco3": {
@@ -824,6 +824,7 @@ class Component:
         "mode": {
             "name": "Direction",
             "struct": "i",
+            "vis": True,
             "mapping": {
                 0: "horizontal",
                 1: "vertical",
@@ -948,9 +949,8 @@ class Component:
             },
         },
         "sendkey": {
-            "name": "Dunno",
+            "name": "sendkey",
             "struct": "i",
-            "ignore": True,
         },
         "movex": {
             "name": "",
@@ -1037,9 +1037,24 @@ class Component:
         },
         "wid": {
             "struct": "i",
+            "vis": True,
             "type": {
                 1: {# Slider
                     "name": "Cursor width",
+                    "mapping": {
+                        255: "auto",
+                    },
+                },
+                122: {# Gauge
+                    "model": {
+                        -1: {
+                            "ignore": True,
+                        },
+                        "P": {
+                            "ignore": False,
+                            "name": "Gauge Thickness",
+                        },
+                    },
                 },
             },
         },
@@ -1051,7 +1066,15 @@ class Component:
                     "name": "Cursor height",
                 },
                 122: {# Gauge
-                    "name": "Center circle dia.",
+                    "model": {
+                        -1: {
+                            "ignore": True,
+                        },
+                        "P": {
+                            "ignore": False,
+                            "name": "Center circle dia.",
+                        },
+                    },
                 },
             },
         },
