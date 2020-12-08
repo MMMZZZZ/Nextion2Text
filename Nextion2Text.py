@@ -1645,8 +1645,8 @@ if __name__ == '__main__':
     parser.add_argument("-p", "--properties", required=False, nargs="*", default=[],
                         help="Specify the (list of) properties that shall be included in the parsing. "
                              "By default, only known, non-visual properties are included. If you want to include "
-                             "visual properties and/or unknown properties, too, specify \"visuals\" and/or "
-                             "\"unknowns\". By default, unknown attributes up to 4 bytes length are interpreted as "
+                             "visual properties and/or unknown properties, too, specify \"visual\" and/or "
+                             "\"unknown\". By default, unknown attributes up to 4 bytes length are interpreted as "
                              "integer while longer attribute values are interpreted as string. Alternatively you can "
                              "use \"unknown_hex\" to get all unknonw values as hex, or \"unknown_raw\" to get all of "
                              "them as characters (including NUL characters and other unprintable ones).")
