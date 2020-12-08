@@ -1263,7 +1263,8 @@ class Component:
 
     def parseRawProperties(self, customInclude=tuple(), customExclude=tuple(),
                            includeVisual:bool=False, includeUnknown:int=0,
-                           inplace=True, emptyEvents=False, **kwargs):
+                           inplace=True, emptyEvents=False,
+                           keepNames=False, keepValues=False, **kwargs):
 
         data = dict()
         # Model name is considered as an "attribute", too. (needed to know the right interpretation; see below)
@@ -1310,9 +1311,9 @@ class Component:
                 if ("vis" in attProperties and attProperties["vis"]) and not includeVisual:
                     attProperties["ignore"] = True
                 if (not "ignore" in attProperties or not attProperties["ignore"]):
-                    if "name" in attProperties:
+                    if "name" in attProperties and not keepNames:
                         attName = attProperties["name"]
-                    if "mapping" in attProperties:
+                    if "mapping" in attProperties and not keepValues:
                         if attData in attProperties["mapping"]:
                             attData = attProperties["mapping"][attData]
                     attributes[attName] = attData
@@ -1654,6 +1655,12 @@ if __name__ == '__main__':
                         help="Optional Extension that is added to the text files (default: \".txt\")")
     parser.add_argument("-e", "--empty_events", action="store_true",
                         help="Optional flag to include empty events in the output (Excluded by default).")
+    parser.add_argument("-n", "--keep_names", action="store_true",
+                        help="Optional flag to preserve the original names (f.ex. \"bco\" instead of \"Background "
+                             "color\").")
+    parser.add_argument("-v", "--keep_values", action="store_true",
+                        help="Optional flag to preserve the original values (f.ex. \"sta: 0\" instead of \"sta: "
+                             "cropped image\").")
     parser.add_argument("-s", "--stats", action="store_true",
                         help="Optional flag to create a file in the output folder that will include all the statistics "
                              "you see in the command line output.")
@@ -1774,7 +1781,9 @@ if __name__ == '__main__':
             json.dump({"Program.s": hmi.programS}, f, indent=4)
     for page in hmi.pages:
         name = page.components[0].rawData["att"]["objname"]#str(page)
-        text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown, includeVisual=includeVisual, emptyEvents=args.empty_events)
+        text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown,
+                            includeVisual=includeVisual, emptyEvents=args.empty_events,
+                            keepNames=args.keep_names, keepValues=args.keep_values)
         texts[name] = text
         compCount[name] = len(page.components)
         codeLines[name] = []
