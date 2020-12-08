@@ -59,7 +59,8 @@ class Component:
         "type": {
             "name": "Type",
             "struct": "i",
-            "mapping": {#Needs to contain all types, even if some get overridden afterwards. Order here is used for sorting later
+            "mapping": {
+                #Needs to contain all types, even if some get overridden afterwards. Order here is used for sorting later
                 121: "Page",
                 52:  "Variable",
                 54:  "Number",
@@ -245,11 +246,11 @@ class Component:
             },
         },
         "val": {
-            "name": "Initial value",
+            "name": "Value",
             "struct": "i",
             "type": {
                 1: {
-                    "name": "Initial position",
+                    "name": "Position",
                 },
                 52: {
                     "sta": {
@@ -259,7 +260,7 @@ class Component:
                     },
                 },
                 53: {
-                    "name": "Initial state",
+                    "name": "State",
                     "mapping": {
                         0: "Unpressed",
                         1: "Pressed",
@@ -267,7 +268,7 @@ class Component:
                 },
                 98: 53,
                 56: {
-                    "name": "Initial state",
+                    "name": "State",
                     "mapping": {
                         0: "Unselected",
                         1: "Selected",
@@ -494,15 +495,15 @@ class Component:
                     "ignore": True,
                 },
             },
-            "model": {
-                "P": {
-                    "drag": {
-                        1: {
-                            "name": "Initial x coord."
-                        },
-                    },
-                },
-            },
+            #"model": {
+            #    "P": {
+            #        "drag": {
+            #            1: {
+            #                "name": "Initial x coord."
+            #            },
+            #        },
+            #    },
+            #},
         },
         "y": {
             "name": "y coordinate",
@@ -513,15 +514,15 @@ class Component:
                     "ignore": True,
                 },
             },
-            "model": {
-                "P": {
-                    "drag": {
-                        1: {
-                            "name": "Initial y coord."
-                        },
-                    },
-                },
-            },
+            #"model": {
+            #    "P": {
+            #        "drag": {
+            #            1: {
+            #                "name": "Initial y coord."
+            #            },
+            #        },
+            #    },
+            #},
         },
         "w": {
             "name": "Width",
