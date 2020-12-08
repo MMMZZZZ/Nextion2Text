@@ -249,8 +249,8 @@ class Component:
             "name": "Input Type",
             "vis": True,
             "mapping": {
-                0: "Character",
-                1: "Password",
+                0: "character",
+                1: "password",
             },
         },
         "val": {
@@ -270,16 +270,16 @@ class Component:
                 53: {
                     "name": "State",
                     "mapping": {
-                        0: "Unpressed",
-                        1: "Pressed",
+                        0: "unpressed",
+                        1: "pressed",
                     },
                 },
                 98: 53,
                 56: {
                     "name": "State",
                     "mapping": {
-                        0: "Unselected",
-                        1: "Selected",
+                        0: "unpressed",
+                        1: "pressed",
                     },
                 },
                 57: 56,
@@ -788,18 +788,18 @@ class Component:
             "type": {
                 55: {# Scrolling Text
                     "mapping": {
-                        0: "Left->Right",
-                        1: "Right->Left",
-                        2: "Top->Bottom",
-                        3: "Bottom->Top",
+                        0: "left->right",
+                        1: "right->left",
+                        2: "top->bottom",
+                        3: "bottom->top",
                     },
                 },
                 0: {# Waveform
                     "name": "Flow Direction",
                     "mapping": {
-                        0: "Left->Right",
-                        1: "Right->Left",
-                        2: "Right aligned",
+                        0: "left->right",
+                        1: "right->left",
+                        2: "right aligned",
                     },
                 },
             },
@@ -1097,7 +1097,7 @@ class Component:
             "name": "Swide up page ID",
             "struct": "i",
             "mapping": {
-                255: "Disabled",
+                255: "disabled",
             },
             "type": {
                 122: {  # Gauge
@@ -1119,7 +1119,7 @@ class Component:
             "name": "Swide down page ID",
             "struct": "i",
             "mapping": {
-                255: "Disabled",
+                255: "disabled",
             },
             "type": {
                 122: {  # Gauge
@@ -1138,7 +1138,7 @@ class Component:
             "name": "Swide left page ID",
             "struct": "i",
             "mapping": {
-                255: "Disabled",
+                255: "disabled",
             },
             "type": {
                 122: {  # Gauge
@@ -1157,7 +1157,7 @@ class Component:
             "name": "Swide right page ID",
             "struct": "i",
             "mapping": {
-                255: "Disabled",
+                255: "disabled",
             },
             "type": {
                 122: {  # Gauge
