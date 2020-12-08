@@ -632,29 +632,25 @@ class Component:
                 122: {# Gauge
                     "name": "Channel 2 Color",
                     "ch": {
-                        1: {
-                            "ignore": True,
+                        3: {
+                            "ignore": False,
                         },
-                        2: {
-                            "ignore": True,
+                        4: {
+                            "ignore": False,
                         },
                     },
                 },
+                0: 122, # Waveform
             },
         },
         "pco3": {
             "struct": "i",
             "name": "Channel 3 Color",
             "vis": True,
+            "ignore": True,
             "ch": {
-                1: {
-                    "ignore": True,
-                },
-                2: {
-                    "ignore": True,
-                },
-                3: {
-                    "ignore": True,
+                4: {
+                    "ignore": False,
                 },
             },
         },
@@ -1654,6 +1650,9 @@ if __name__ == '__main__':
 
     includeUnknown = 0
     includeVisuals = False
+    if "all" in args.properties:
+        includeVisuals = True
+        includeUnknown = 1
     if "visual" in args.properties:
         includeVisuals = True
     if "unknown" in args.properties:
