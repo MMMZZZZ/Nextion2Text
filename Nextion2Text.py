@@ -1284,7 +1284,6 @@ class Component:
                 attProperties = copy.deepcopy(Component.attributes[attName])
                 done = False
                 while not done:
-                    print("nodo")
                     done = True
                     keys = [k for k in attProperties.keys()]
                     for d in keys:
