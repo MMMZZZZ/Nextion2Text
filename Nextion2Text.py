@@ -958,8 +958,14 @@ class Component:
             },
         },
         "sendkey": {
-            "name": "sendkey",
+            "name": "Send Component ID",
             "struct": "i",
+            "mapping": {
+                0: "disabled",
+                1: "on release",
+                2: "on press",
+                3: "on press and release",
+            },
         },
         "movex": {
             "name": "",
