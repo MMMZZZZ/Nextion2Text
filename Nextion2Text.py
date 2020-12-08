@@ -1622,11 +1622,11 @@ if __name__ == '__main__':
     parser.add_argument("-p", "--properties", required=False, nargs="*", default=[],
                         help="Specify the (list of) properties that shall be included in the parsing. "
                              "By default, only known, non-visual properties are included. If you want to include "
-                             "visual properties and/or unknown properties, too, specify \"visuals\", \"unknowns\" or "
-                             "\"all\". By default, unknown attributes up to 4 bytes length are interpreted as integer "
-                             "while longer attribute values are interpreted as string. Alternatively you can use "
-                             "\"unknown_hex\" to get all unknonw values as hex, or \"unknown_raw\" to get all of them "
-                             "as characters (including NUL characters and other unprintable ones).")
+                             "visual properties and/or unknown properties, too, specify \"visuals\" and/or "
+                             "\"unknowns\". By default, unknown attributes up to 4 bytes length are interpreted as "
+                             "integer while longer attribute values are interpreted as string. Alternatively you can "
+                             "use \"unknown_hex\" to get all unknonw values as hex, or \"unknown_raw\" to get all of "
+                             "them as characters (including NUL characters and other unprintable ones).")
     parser.add_argument("-c", "--custom_dict", metavar="PY_FILE", required=False, type=str, default="",
                         help="Optional. You can create your own attributes and codeEvents dictionaries instead or in "
                              "addition to the build-in dictionaries (see -x). Specify the Python file with your "
@@ -1650,9 +1650,6 @@ if __name__ == '__main__':
 
     includeUnknown = 0
     includeVisuals = False
-    if "all" in args.properties:
-        includeVisuals = True
-        includeUnknown = 1
     if "visual" in args.properties:
         includeVisuals = True
     if "unknown" in args.properties:
