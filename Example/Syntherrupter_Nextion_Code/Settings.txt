@@ -3,7 +3,10 @@ Page Settings
         ID               : 0
         Scope            : local
         Send Component ID: disabled
+        Width            : 800
         Locked           : no
+        Fill             : solid color
+        Back. Color      : 65535
     
     Events
         Preinitialize Event
@@ -30,33 +33,76 @@ Page Settings
         
 Text tTitle
     Attributes
-        ID                 : 2
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Settings
-        Max. Text Size     : 22
+        ID                  : 2
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 10
+        Width               : 770
+        Height              : 64
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 1
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : bottom
+        Input Type          : character
+        Text                : Settings
+        Max. Text Size      : 22
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tUser
     Attributes
-        ID                 : 4
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               :  Guest
-        Max. Text Size     : 32
+        ID                  : 4
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 0
+        y coordinate        : 460
+        Width               : 800
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 4589
+        Font Color          : 65535
+        Horizontal Alignment: left
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                :  Guest
+        Max. Text Size      : 32
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Button bCoilSettings
     Attributes
-        ID               : 1
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : Tesla Coil Limits
-        Max. Text Size   : 20
+        ID                               : 1
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 290
+        y coordinate                     : 90
+        Width                            : 260
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 11
+        Back. Picture ID (Pressed)       : 12
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : Tesla Coil Limits
+        Max. Text Size                   : 20
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -64,13 +110,26 @@ Button bCoilSettings
         
 Button bReturn
     Attributes
-        ID               : 3
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : Save
-        Max. Text Size   : 10
+        ID                               : 3
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 15
+        y coordinate                     : 405
+        Width                            : 156
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 7
+        Back. Picture ID (Pressed)       : 8
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : Save
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -80,13 +139,26 @@ Button bReturn
         
 Button bUSBFWUpdate
     Attributes
-        ID               : 5
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : USB FW Update
-        Max. Text Size   : 20
+        ID                               : 5
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 290
+        y coordinate                     : 145
+        Width                            : 260
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 11
+        Back. Picture ID (Pressed)       : 12
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : USB FW Update
+        Max. Text Size                   : 20
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -94,13 +166,26 @@ Button bUSBFWUpdate
         
 Button bGeneral
     Attributes
-        ID               : 6
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : Other Settings
-        Max. Text Size   : 20
+        ID                               : 6
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 15
+        y coordinate                     : 90
+        Width                            : 260
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 11
+        Back. Picture ID (Pressed)       : 12
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : Other Settings
+        Max. Text Size                   : 20
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -108,13 +193,26 @@ Button bGeneral
         
 Button bUsers
     Attributes
-        ID               : 7
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : User Settings
-        Max. Text Size   : 20
+        ID                               : 7
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 15
+        y coordinate                     : 145
+        Width                            : 260
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 11
+        Back. Picture ID (Pressed)       : 12
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : User Settings
+        Max. Text Size                   : 20
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event

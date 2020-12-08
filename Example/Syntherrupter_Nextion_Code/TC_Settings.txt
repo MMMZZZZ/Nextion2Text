@@ -3,7 +3,10 @@ Page TC_Settings
         ID               : 0
         Scope            : local
         Send Component ID: disabled
+        Width            : 800
         Locked           : no
+        Fill             : solid color
+        Back. Color      : 65535
     
     Events
         Preinitialize Event
@@ -373,12 +376,28 @@ Variable (int32) maxVoices
     
 Number nCoil1On
     Attributes
-        ID                 : 12
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 301
+        ID                      : 12
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 140
+        y coordinate            : 119
+        Width                   : 140
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 301
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -396,12 +415,28 @@ Number nCoil1On
         
 Number nCoil1MinOff
     Attributes
-        ID                 : 22
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 101
+        ID                      : 22
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 300
+        y coordinate            : 119
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 101
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -419,12 +454,28 @@ Number nCoil1MinOff
         
 Number nCoil2On
     Attributes
-        ID                 : 24
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 302
+        ID                      : 24
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 140
+        y coordinate            : 150
+        Width                   : 140
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 302
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -442,12 +493,28 @@ Number nCoil2On
         
 Number nCoil2MinOff
     Attributes
-        ID                 : 25
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 102
+        ID                      : 25
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 300
+        y coordinate            : 150
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 102
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -465,12 +532,28 @@ Number nCoil2MinOff
         
 Number nCoil3On
     Attributes
-        ID                 : 27
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 303
+        ID                      : 27
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 140
+        y coordinate            : 181
+        Width                   : 140
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 303
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -488,12 +571,28 @@ Number nCoil3On
         
 Number nCoil3MinOff
     Attributes
-        ID                 : 28
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 103
+        ID                      : 28
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 300
+        y coordinate            : 181
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 103
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -511,12 +610,28 @@ Number nCoil3MinOff
         
 Number nCoil4On
     Attributes
-        ID                 : 30
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 304
+        ID                      : 30
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 140
+        y coordinate            : 212
+        Width                   : 140
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 304
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -534,12 +649,28 @@ Number nCoil4On
         
 Number nCoil4MinOff
     Attributes
-        ID                 : 31
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 104
+        ID                      : 31
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 300
+        y coordinate            : 212
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 104
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -557,12 +688,28 @@ Number nCoil4MinOff
         
 Number nCoil5On
     Attributes
-        ID                 : 33
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 305
+        ID                      : 33
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 140
+        y coordinate            : 243
+        Width                   : 140
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 305
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -580,12 +727,28 @@ Number nCoil5On
         
 Number nCoil5MinOff
     Attributes
-        ID                 : 34
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 105
+        ID                      : 34
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 300
+        y coordinate            : 243
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 105
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -603,12 +766,28 @@ Number nCoil5MinOff
         
 Number nCoil6On
     Attributes
-        ID                 : 36
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 306
+        ID                      : 36
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 140
+        y coordinate            : 274
+        Width                   : 140
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 306
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -626,12 +805,28 @@ Number nCoil6On
         
 Number nCoil6MinOff
     Attributes
-        ID                 : 37
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 106
+        ID                      : 37
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 300
+        y coordinate            : 274
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 106
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -649,12 +844,28 @@ Number nCoil6MinOff
         
 Number nCoil1Voices
     Attributes
-        ID                 : 75
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 1
+        ID                      : 75
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 595
+        y coordinate            : 119
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 1
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -672,12 +883,28 @@ Number nCoil1Voices
         
 Number nCoil2Voices
     Attributes
-        ID                 : 76
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 2
+        ID                      : 76
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 595
+        y coordinate            : 150
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 2
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -695,12 +922,28 @@ Number nCoil2Voices
         
 Number nCoil3Voices
     Attributes
-        ID                 : 77
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 3
+        ID                      : 77
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 595
+        y coordinate            : 181
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 3
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -718,12 +961,28 @@ Number nCoil3Voices
         
 Number nCoil4Voices
     Attributes
-        ID                 : 78
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 4
+        ID                      : 78
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 595
+        y coordinate            : 212
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 4
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -741,12 +1000,28 @@ Number nCoil4Voices
         
 Number nCoil5Voices
     Attributes
-        ID                 : 79
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 5
+        ID                      : 79
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 595
+        y coordinate            : 243
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 5
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -764,12 +1039,28 @@ Number nCoil5Voices
         
 Number nCoil6Voices
     Attributes
-        ID                 : 80
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 6
+        ID                      : 80
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 595
+        y coordinate            : 274
+        Width                   : 135
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 6
+        Significant digits shown: all
+        Format                  : decimal
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -787,12 +1078,28 @@ Number nCoil6Voices
         
 XFloat nCoil1Duty
     Attributes
-        ID                 : 23
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 101
+        ID                      : 23
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 455
+        y coordinate            : 119
+        Width                   : 120
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 101
+        Significant digits left : 0
+        Significant digits right: 1
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -810,12 +1117,28 @@ XFloat nCoil1Duty
         
 XFloat nCoil2Duty
     Attributes
-        ID                 : 26
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 102
+        ID                      : 26
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 455
+        y coordinate            : 150
+        Width                   : 120
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 102
+        Significant digits left : 0
+        Significant digits right: 1
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -833,12 +1156,28 @@ XFloat nCoil2Duty
         
 XFloat nCoil3Duty
     Attributes
-        ID                 : 29
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 103
+        ID                      : 29
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 455
+        y coordinate            : 181
+        Width                   : 120
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 103
+        Significant digits left : 0
+        Significant digits right: 1
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -856,12 +1195,28 @@ XFloat nCoil3Duty
         
 XFloat nCoil4Duty
     Attributes
-        ID                 : 32
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 104
+        ID                      : 32
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 455
+        y coordinate            : 212
+        Width                   : 120
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 104
+        Significant digits left : 0
+        Significant digits right: 1
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -879,12 +1234,28 @@ XFloat nCoil4Duty
         
 XFloat nCoil5Duty
     Attributes
-        ID                 : 35
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 105
+        ID                      : 35
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 455
+        y coordinate            : 243
+        Width                   : 120
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 105
+        Significant digits left : 0
+        Significant digits right: 1
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -902,12 +1273,28 @@ XFloat nCoil5Duty
         
 XFloat nCoil6Duty
     Attributes
-        ID                 : 38
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 106
+        ID                      : 38
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 455
+        y coordinate            : 274
+        Width                   : 120
+        Height                  : 26
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 106
+        Significant digits left : 0
+        Significant digits right: 1
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
     Events
         Touch Press Event
@@ -925,142 +1312,353 @@ XFloat nCoil6Duty
         
 XFloat idle
     Attributes
-        ID                 : 51
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Value              : 0
+        ID                      : 51
+        Scope                   : local
+        Send Component ID       : disabled
+        x coordinate            : 770
+        y coordinate            : 0
+        Width                   : 30
+        Height                  : 15
+        Locked                  : no
+        Fill                    : solid color
+        Style                   : flat
+        Associated Keyboard     : none
+        Font ID                 : 2
+        Back. Color             : 65535
+        Font Color              : 6900
+        Horizontal Alignment    : right
+        Vertical Alignment      : center
+        Value                   : 0
+        Significant digits left : 0
+        Significant digits right: 0
+        Word wrap               : enabled
+        Horizontal Spacing      : 0
+        Vertical Spacing        : 0
     
 Text tTitle
     Attributes
-        ID                 : 1
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Limits of all Tesla Coils
-        Max. Text Size     : 30
+        ID                  : 1
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 10
+        Width               : 770
+        Height              : 64
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 1
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : bottom
+        Input Type          : character
+        Text                : Limits of all Tesla Coils
+        Max. Text Size      : 30
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tUser
     Attributes
-        ID                 : 3
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               :  Guest
-        Max. Text Size     : 32
+        ID                  : 3
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 0
+        y coordinate        : 460
+        Width               : 800
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 4589
+        Font Color          : 65535
+        Horizontal Alignment: left
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                :  Guest
+        Max. Text Size      : 32
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tCoil1
     Attributes
-        ID                 : 11
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Tesla Coil 1:
-        Max. Text Size     : 30
+        ID                  : 11
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 121
+        Width               : 105
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Tesla Coil 1:
+        Max. Text Size      : 30
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tMaxOn
     Attributes
-        ID                 : 13
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : max. Ontime [탎]
-        Max. Text Size     : 16
+        ID                  : 13
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 140
+        y coordinate        : 90
+        Width               : 140
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: right
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : max. Ontime [탎]
+        Max. Text Size      : 16
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tMinOff
     Attributes
-        ID                 : 14
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : min. Offtime [탎]
-        Max. Text Size     : 17
+        ID                  : 14
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 300
+        y coordinate        : 90
+        Width               : 135
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: right
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : min. Offtime [탎]
+        Max. Text Size      : 17
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tMaxDuty
     Attributes
-        ID                 : 15
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : max. Duty [%]
-        Max. Text Size     : 16
+        ID                  : 15
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 455
+        y coordinate        : 90
+        Width               : 120
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: right
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : max. Duty [%]
+        Max. Text Size      : 16
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tCoil2
     Attributes
-        ID                 : 16
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Tesla Coil 2:
-        Max. Text Size     : 30
+        ID                  : 16
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 152
+        Width               : 105
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Tesla Coil 2:
+        Max. Text Size      : 30
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tCoil3
     Attributes
-        ID                 : 17
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Tesla Coil 3:
-        Max. Text Size     : 30
+        ID                  : 17
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 183
+        Width               : 105
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Tesla Coil 3:
+        Max. Text Size      : 30
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tCoil4
     Attributes
-        ID                 : 18
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Tesla Coil 4:
-        Max. Text Size     : 30
+        ID                  : 18
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 214
+        Width               : 105
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Tesla Coil 4:
+        Max. Text Size      : 30
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tCoil5
     Attributes
-        ID                 : 19
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Tesla Coil 5:
-        Max. Text Size     : 30
+        ID                  : 19
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 245
+        Width               : 105
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Tesla Coil 5:
+        Max. Text Size      : 30
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tCoil6
     Attributes
-        ID                 : 20
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Tesla Coil 6:
-        Max. Text Size     : 30
+        ID                  : 20
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 276
+        Width               : 105
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Tesla Coil 6:
+        Max. Text Size      : 30
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tSelToMod
     Attributes
-        ID                 : 54
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Select any value to modify.
-        Max. Text Size     : 30
+        ID                  : 54
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 322
+        Width               : 430
+        Height              : 40
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 0
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : bottom
+        Input Type          : character
+        Text                : Select any value to modify.
+        Max. Text Size      : 30
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text fCheck
     Attributes
-        ID                 : 73
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               :  
-        Max. Text Size     : 10
+        ID                  : 73
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 724
+        y coordinate        : 0
+        Width               : 40
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                :  
+        Max. Text Size      : 10
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
     Events
         Touch Release Event
@@ -1268,23 +1866,51 @@ Text fCheck
         
 Text tMaxVoices
     Attributes
-        ID                 : 74
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : max. MIDI Voices
-        Max. Text Size     : 16
+        ID                  : 74
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 595
+        y coordinate        : 90
+        Width               : 135
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: right
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : max. MIDI Voices
+        Max. Text Size      : 16
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Button bReturn
     Attributes
-        ID               : 2
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : Return
-        Max. Text Size   : 10
+        ID                               : 2
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 15
+        y coordinate                     : 406
+        Width                            : 156
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 7
+        Back. Picture ID (Pressed)       : 8
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : Return
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Press Event
@@ -1527,13 +2153,26 @@ Button bReturn
         
 Button b0
     Attributes
-        ID               : 39
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 0
-        Max. Text Size   : 1
+        ID                               : 39
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 629
+        y coordinate                     : 377
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 0
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1548,13 +2187,26 @@ Button b0
         
 Button b1
     Attributes
-        ID               : 40
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 1
-        Max. Text Size   : 1
+        ID                               : 40
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 464
+        y coordinate                     : 322
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 1
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1570,13 +2222,26 @@ Button b1
         
 Button b2
     Attributes
-        ID               : 41
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 2
-        Max. Text Size   : 1
+        ID                               : 41
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 519
+        y coordinate                     : 322
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 2
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1592,13 +2257,26 @@ Button b2
         
 Button b3
     Attributes
-        ID               : 42
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 3
-        Max. Text Size   : 1
+        ID                               : 42
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 574
+        y coordinate                     : 322
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 3
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1614,13 +2292,26 @@ Button b3
         
 Button b4
     Attributes
-        ID               : 43
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 4
-        Max. Text Size   : 1
+        ID                               : 43
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 629
+        y coordinate                     : 322
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 4
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1636,13 +2327,26 @@ Button b4
         
 Button b5
     Attributes
-        ID               : 44
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 5
-        Max. Text Size   : 1
+        ID                               : 44
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 684
+        y coordinate                     : 322
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 5
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1658,13 +2362,26 @@ Button b5
         
 Button b6
     Attributes
-        ID               : 45
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 6
-        Max. Text Size   : 1
+        ID                               : 45
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 739
+        y coordinate                     : 322
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 6
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1680,13 +2397,26 @@ Button b6
         
 Button b7
     Attributes
-        ID               : 46
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 7
-        Max. Text Size   : 1
+        ID                               : 46
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 464
+        y coordinate                     : 377
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 7
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1702,13 +2432,26 @@ Button b7
         
 Button b8
     Attributes
-        ID               : 47
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 8
-        Max. Text Size   : 1
+        ID                               : 47
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 519
+        y coordinate                     : 377
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 8
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1724,13 +2467,26 @@ Button b8
         
 Button b9
     Attributes
-        ID               : 48
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 9
-        Max. Text Size   : 1
+        ID                               : 48
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 574
+        y coordinate                     : 377
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 9
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1746,13 +2502,26 @@ Button b9
         
 Button bClear
     Attributes
-        ID               : 49
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : X
-        Max. Text Size   : 1
+        ID                               : 49
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 684
+        y coordinate                     : 377
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : X
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1760,13 +2529,26 @@ Button bClear
         
 Button bOK
     Attributes
-        ID               : 50
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : ok
-        Max. Text Size   : 2
+        ID                               : 50
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 739
+        y coordinate                     : 377
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : ok
+        Max. Text Size                   : 2
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event

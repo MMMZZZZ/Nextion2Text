@@ -3,7 +3,10 @@ Page Startup
         ID               : 0
         Scope            : local
         Send Component ID: disabled
+        Width            : 800
         Locked           : no
+        Fill             : solid color
+        Back. Color      : 0
     
     Events
         Preinitialize Event
@@ -20,13 +23,28 @@ Variable (int32) comOk
     
 Text tNoConfig
     Attributes
-        ID                 : 1
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Warning! EEPROM contains no vaild configuration.\r\n      Please go to settings and check ALL values.
-        Max. Text Size     : 100
+        ID                  : 1
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 0
+        y coordinate        : 0
+        Width               : 800
+        Height              : 480
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 0
+        Back. Color         : 65535
+        Font Color          : 4589
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Warning! EEPROM contains no vaild configuration.\r\n      Please go to settings and check ALL values.
+        Max. Text Size      : 100
+        Word wrap           : enabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
     Events
         Touch Release Event
@@ -35,43 +53,103 @@ Text tNoConfig
         
 Text tNxtFW
     Attributes
-        ID                 : 4
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Nextion Firmware:
-        Max. Text Size     : 20
+        ID                  : 4
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 90
+        y coordinate        : 450
+        Width               : 150
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 4589
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Nextion Firmware:
+        Max. Text Size      : 20
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tNxtFWVersion
     Attributes
-        ID                 : 5
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : v3.1.0-beta.6
-        Max. Text Size     : 20
+        ID                  : 5
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 245
+        y coordinate        : 450
+        Width               : 150
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 4589
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : v3.1.0-beta.6
+        Max. Text Size      : 20
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tTivaFW
     Attributes
-        ID                 : 6
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Tiva Firmware:
-        Max. Text Size     : 20
+        ID                  : 6
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 450
+        y coordinate        : 450
+        Width               : 120
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 4589
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Tiva Firmware:
+        Max. Text Size      : 20
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tTivaFWVersion
     Attributes
-        ID                 : 7
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : v0.0.0-beta.0
-        Max. Text Size     : 20
+        ID                  : 7
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 575
+        y coordinate        : 450
+        Width               : 150
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 65535
+        Font Color          : 4589
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : v0.0.0-beta.0
+        Max. Text Size      : 20
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
     Events
         Touch Press Event
@@ -82,7 +160,12 @@ Picture pStartup
         ID               : 2
         Scope            : local
         Send Component ID: disabled
+        x coordinate     : 0
+        y coordinate     : 0
+        Width            : 800
+        Height           : 480
         Locked           : no
+        Picture ID       : 0
     
     Events
         Touch Release Event

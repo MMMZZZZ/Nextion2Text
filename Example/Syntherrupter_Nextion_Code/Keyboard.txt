@@ -3,7 +3,10 @@ Page Keyboard
         ID               : 0
         Scope            : local
         Send Component ID: disabled
+        Width            : 800
         Locked           : no
+        Fill             : solid color
+        Back. Color      : 65535
     
     Events
         Preinitialize Event
@@ -112,53 +115,126 @@ Variable (int32) firstClick
     
 Text tTitle
     Attributes
-        ID                 : 1
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Change Example 42
-        Max. Text Size     : 30
+        ID                  : 1
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 10
+        Width               : 770
+        Height              : 64
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 1
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : bottom
+        Input Type          : character
+        Text                : Change Example 42
+        Max. Text Size      : 30
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tUser
     Attributes
-        ID                 : 3
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               :  Guest
-        Max. Text Size     : 32
+        ID                  : 3
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 0
+        y coordinate        : 460
+        Width               : 800
+        Height              : 20
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 2
+        Back. Color         : 4589
+        Font Color          : 65535
+        Horizontal Alignment: left
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                :  Guest
+        Max. Text Size      : 32
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tNewVal
     Attributes
-        ID                 : 7
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : New Value:
-        Max. Text Size     : 20
+        ID                  : 7
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 90
+        Width               : 199
+        Height              : 40
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 0
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : bottom
+        Input Type          : character
+        Text                : New Value:
+        Max. Text Size      : 20
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text newVal
     Attributes
-        ID                 : 8
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : 42
-        Max. Text Size     : 32
+        ID                  : 8
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 208
+        y coordinate        : 90
+        Width               : 550
+        Height              : 40
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 0
+        Back. Color         : 65535
+        Font Color          : 6900
+        Horizontal Alignment: left
+        Vertical Alignment  : bottom
+        Input Type          : character
+        Text                : 42
+        Max. Text Size      : 32
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Button bReturn
     Attributes
-        ID               : 2
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : Return
-        Max. Text Size   : 10
+        ID                               : 2
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 15
+        y coordinate                     : 405
+        Width                            : 156
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 7
+        Back. Picture ID (Pressed)       : 8
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : Return
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Press Event
@@ -183,13 +259,26 @@ Button bReturn
         
 Button b0
     Attributes
-        ID               : 9
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 0
-        Max. Text Size   : 1
+        ID                               : 9
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 559
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 0
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -202,13 +291,26 @@ Button b0
         
 Button b1
     Attributes
-        ID               : 10
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 1
-        Max. Text Size   : 1
+        ID                               : 10
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 109
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 1
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -221,13 +323,26 @@ Button b1
         
 Button b2
     Attributes
-        ID               : 11
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 2
-        Max. Text Size   : 1
+        ID                               : 11
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 158
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 2
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -240,13 +355,26 @@ Button b2
         
 Button b3
     Attributes
-        ID               : 12
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 3
-        Max. Text Size   : 1
+        ID                               : 12
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 209
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 3
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -259,13 +387,26 @@ Button b3
         
 Button b4
     Attributes
-        ID               : 13
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 4
-        Max. Text Size   : 1
+        ID                               : 13
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 259
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 4
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -278,13 +419,26 @@ Button b4
         
 Button b5
     Attributes
-        ID               : 14
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 5
-        Max. Text Size   : 1
+        ID                               : 14
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 309
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 5
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -297,13 +451,26 @@ Button b5
         
 Button b6
     Attributes
-        ID               : 15
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 6
-        Max. Text Size   : 1
+        ID                               : 15
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 359
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 6
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -316,13 +483,26 @@ Button b6
         
 Button b7
     Attributes
-        ID               : 16
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 7
-        Max. Text Size   : 1
+        ID                               : 16
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 409
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 7
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -335,13 +515,26 @@ Button b7
         
 Button b8
     Attributes
-        ID               : 17
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 8
-        Max. Text Size   : 10
+        ID                               : 17
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 459
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 8
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -354,13 +547,26 @@ Button b8
         
 Button b9
     Attributes
-        ID               : 18
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : 9
-        Max. Text Size   : 10
+        ID                               : 18
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 509
+        y coordinate                     : 145
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : 9
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -373,13 +579,26 @@ Button b9
         
 Button bP
     Attributes
-        ID               : 19
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : p
-        Max. Text Size   : 1
+        ID                               : 19
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 569
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : p
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -394,13 +613,26 @@ Button bP
         
 Button bQ
     Attributes
-        ID               : 20
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : q
-        Max. Text Size   : 1
+        ID                               : 20
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 119
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : q
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -415,13 +647,26 @@ Button bQ
         
 Button bW
     Attributes
-        ID               : 21
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : w
-        Max. Text Size   : 1
+        ID                               : 21
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 169
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : w
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -436,13 +681,26 @@ Button bW
         
 Button bE
     Attributes
-        ID               : 22
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : e
-        Max. Text Size   : 1
+        ID                               : 22
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 219
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : e
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -457,13 +715,26 @@ Button bE
         
 Button bR
     Attributes
-        ID               : 23
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : r
-        Max. Text Size   : 1
+        ID                               : 23
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 269
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : r
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -478,13 +749,26 @@ Button bR
         
 Button bT
     Attributes
-        ID               : 24
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : t
-        Max. Text Size   : 1
+        ID                               : 24
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 319
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : t
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -499,13 +783,26 @@ Button bT
         
 Button bZ
     Attributes
-        ID               : 25
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : z
-        Max. Text Size   : 1
+        ID                               : 25
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 369
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : z
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -520,13 +817,26 @@ Button bZ
         
 Button bU
     Attributes
-        ID               : 26
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : u
-        Max. Text Size   : 1
+        ID                               : 26
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 419
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : u
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -541,13 +851,26 @@ Button bU
         
 Button bI
     Attributes
-        ID               : 27
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : i
-        Max. Text Size   : 10
+        ID                               : 27
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 469
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : i
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -562,13 +885,26 @@ Button bI
         
 Button bO
     Attributes
-        ID               : 28
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : o
-        Max. Text Size   : 10
+        ID                               : 28
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 519
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : o
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -583,13 +919,26 @@ Button bO
         
 Button bA
     Attributes
-        ID               : 29
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : a
-        Max. Text Size   : 1
+        ID                               : 29
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 125
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : a
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -604,13 +953,26 @@ Button bA
         
 Button bS
     Attributes
-        ID               : 30
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : s
-        Max. Text Size   : 1
+        ID                               : 30
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 175
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : s
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -625,13 +987,26 @@ Button bS
         
 Button bD
     Attributes
-        ID               : 31
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : d
-        Max. Text Size   : 1
+        ID                               : 31
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 225
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : d
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -646,13 +1021,26 @@ Button bD
         
 Button bF
     Attributes
-        ID               : 32
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : f
-        Max. Text Size   : 1
+        ID                               : 32
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 275
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : f
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -667,13 +1055,26 @@ Button bF
         
 Button bG
     Attributes
-        ID               : 33
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : g
-        Max. Text Size   : 1
+        ID                               : 33
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 325
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : g
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -688,13 +1089,26 @@ Button bG
         
 Button bH
     Attributes
-        ID               : 34
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : h
-        Max. Text Size   : 1
+        ID                               : 34
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 375
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : h
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -709,13 +1123,26 @@ Button bH
         
 Button bJ
     Attributes
-        ID               : 35
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : j
-        Max. Text Size   : 1
+        ID                               : 35
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 425
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : j
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -730,13 +1157,26 @@ Button bJ
         
 Button bK
     Attributes
-        ID               : 36
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : k
-        Max. Text Size   : 10
+        ID                               : 36
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 475
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : k
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -751,13 +1191,26 @@ Button bK
         
 Button bL
     Attributes
-        ID               : 37
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : l
-        Max. Text Size   : 10
+        ID                               : 37
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 525
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : l
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -772,13 +1225,26 @@ Button bL
         
 Button bBar
     Attributes
-        ID               : 38
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : -
-        Max. Text Size   : 1
+        ID                               : 38
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 585
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : -
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -793,13 +1259,26 @@ Button bBar
         
 Button bY
     Attributes
-        ID               : 39
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : y
-        Max. Text Size   : 1
+        ID                               : 39
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 135
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : y
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -814,13 +1293,26 @@ Button bY
         
 Button bX
     Attributes
-        ID               : 40
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : x
-        Max. Text Size   : 1
+        ID                               : 40
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 185
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : x
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -835,13 +1327,26 @@ Button bX
         
 Button bC
     Attributes
-        ID               : 41
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : c
-        Max. Text Size   : 1
+        ID                               : 41
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 235
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : c
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -856,13 +1361,26 @@ Button bC
         
 Button bV
     Attributes
-        ID               : 42
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : v
-        Max. Text Size   : 1
+        ID                               : 42
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 285
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : v
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -877,13 +1395,26 @@ Button bV
         
 Button bB
     Attributes
-        ID               : 43
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : b
-        Max. Text Size   : 1
+        ID                               : 43
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 335
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : b
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -898,13 +1429,26 @@ Button bB
         
 Button bN
     Attributes
-        ID               : 44
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : n
-        Max. Text Size   : 1
+        ID                               : 44
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 385
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : n
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -919,13 +1463,26 @@ Button bN
         
 Button bM
     Attributes
-        ID               : 45
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : m
-        Max. Text Size   : 1
+        ID                               : 45
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 435
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : m
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -940,13 +1497,26 @@ Button bM
         
 Button bCom
     Attributes
-        ID               : 46
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : ,
-        Max. Text Size   : 10
+        ID                               : 46
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 485
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : ,
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -961,13 +1531,26 @@ Button bCom
         
 Button bDot
     Attributes
-        ID               : 47
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : .
-        Max. Text Size   : 10
+        ID                               : 47
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 535
+        y coordinate                     : 295
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : .
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -982,13 +1565,26 @@ Button bDot
         
 Button bBack
     Attributes
-        ID               : 48
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : <-
-        Max. Text Size   : 2
+        ID                               : 48
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 610
+        y coordinate                     : 145
+        Width                            : 78
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 3
+        Back. Picture ID (Pressed)       : 4
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : <-
+        Max. Text Size                   : 2
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1000,13 +1596,26 @@ Button bBack
         
 Button bSpace
     Attributes
-        ID               : 49
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : SPACE
-        Max. Text Size   : 6
+        ID                               : 49
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 209
+        y coordinate                     : 344
+        Width                            : 312
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 13
+        Back. Picture ID (Pressed)       : 14
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : SPACE
+        Max. Text Size                   : 6
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1021,13 +1630,26 @@ Button bSpace
         
 Button bPlus
     Attributes
-        ID               : 53
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : +
-        Max. Text Size   : 1
+        ID                               : 53
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 669
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : +
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1042,13 +1664,26 @@ Button bPlus
         
 Button bUE
     Attributes
-        ID               : 54
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : ü
-        Max. Text Size   : 10
+        ID                               : 54
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 619
+        y coordinate                     : 195
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : ü
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1063,13 +1698,26 @@ Button bUE
         
 Button bOE
     Attributes
-        ID               : 55
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : ö
-        Max. Text Size   : 10
+        ID                               : 55
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 575
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : ö
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1084,13 +1732,26 @@ Button bOE
         
 Button bAE
     Attributes
-        ID               : 56
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : ä
-        Max. Text Size   : 10
+        ID                               : 56
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 625
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : ä
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1105,13 +1766,26 @@ Button bAE
         
 Button bArr
     Attributes
-        ID               : 58
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : <
-        Max. Text Size   : 1
+        ID                               : 58
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 526
+        y coordinate                     : 345
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : <
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1126,13 +1800,26 @@ Button bArr
         
 Button bQuest
     Attributes
-        ID               : 59
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : ?
-        Max. Text Size   : 1
+        ID                               : 59
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 675
+        y coordinate                     : 245
+        Width                            : 45
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 1
+        Back. Picture ID (Pressed)       : 2
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : ?
+        Max. Text Size                   : 1
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1147,13 +1834,26 @@ Button bQuest
         
 Dual-state Button btShift
     Attributes
-        ID               : 51
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : ^
-        Max. Text Size   : 10
+        ID                               : 51
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 52
+        y coordinate                     : 295
+        Width                            : 78
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 3
+        Back. Picture ID (Pressed)       : 4
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : ^
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Release Event
@@ -1258,13 +1958,26 @@ Dual-state Button btShift
         
 Dual-state Button btShift2
     Attributes
-        ID               : 57
-        Scope            : local
-        Send Component ID: disabled
-        Locked           : no
-        State            : unpressed
-        Text             : ^
-        Max. Text Size   : 10
+        ID                               : 57
+        Scope                            : local
+        Send Component ID                : disabled
+        x coordinate                     : 635
+        y coordinate                     : 295
+        Width                            : 78
+        Height                           : 45
+        Locked                           : no
+        Fill                             : image
+        Font ID                          : 0
+        Background Picture ID (Unpressed): 3
+        Back. Picture ID (Pressed)       : 4
+        Horizontal Alignment             : center
+        Vertical Alignment               : center
+        State                            : unpressed
+        Text                             : ^
+        Max. Text Size                   : 10
+        Word wrap                        : disabled
+        Horizontal Spacing               : 0
+        Vertical Spacing                 : 0
     
     Events
         Touch Press Event

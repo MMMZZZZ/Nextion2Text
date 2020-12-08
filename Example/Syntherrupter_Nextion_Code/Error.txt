@@ -3,25 +3,58 @@ Page Error
         ID               : 0
         Scope            : local
         Send Component ID: disabled
+        Width            : 800
         Locked           : no
+        Fill             : solid color
+        Back. Color      : 6900
     
 Text tTitle
     Attributes
-        ID                 : 1
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Fehler!
-        Max. Text Size     : 25
+        ID                  : 1
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 159
+        Width               : 770
+        Height              : 64
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 1
+        Back. Color         : 6900
+        Font Color          : 65535
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Fehler!
+        Max. Text Size      : 25
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tError
     Attributes
-        ID                 : 2
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Unbekannter Fehler
-        Max. Text Size     : 25
+        ID                  : 2
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 12
+        y coordinate        : 236
+        Width               : 770
+        Height              : 40
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 0
+        Back. Color         : 6900
+        Font Color          : 65535
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Unbekannter Fehler
+        Max. Text Size      : 25
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     

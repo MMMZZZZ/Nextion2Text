@@ -3,7 +3,10 @@ Page USB_FW_Update
         ID               : 0
         Scope            : local
         Send Component ID: disabled
+        Width            : 800
         Locked           : no
+        Fill             : solid color
+        Back. Color      : 6900
     
     Events
         Postinitialize Event
@@ -12,21 +15,51 @@ Page USB_FW_Update
         
 Text tTitle
     Attributes
-        ID                 : 1
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : USB Firmware Update
-        Max. Text Size     : 25
+        ID                  : 1
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 15
+        y coordinate        : 159
+        Width               : 770
+        Height              : 64
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 1
+        Back. Color         : 6900
+        Font Color          : 65535
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : USB Firmware Update
+        Max. Text Size      : 25
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
 Text tInfo
     Attributes
-        ID                 : 2
-        Scope              : local
-        Send Component ID  : disabled
-        Locked             : no
-        Associated Keyboard: none
-        Text               : Waiting for beginning of transmission...
-        Max. Text Size     : 40
+        ID                  : 2
+        Scope               : local
+        Send Component ID   : disabled
+        x coordinate        : 12
+        y coordinate        : 236
+        Width               : 770
+        Height              : 40
+        Locked              : no
+        Fill                : solid color
+        Style               : flat
+        Associated Keyboard : none
+        Font ID             : 0
+        Back. Color         : 6900
+        Font Color          : 65535
+        Horizontal Alignment: center
+        Vertical Alignment  : center
+        Input Type          : character
+        Text                : Waiting for beginning of transmission...
+        Max. Text Size      : 40
+        Word wrap           : disabled
+        Horizontal Spacing  : 0
+        Vertical Spacing    : 0
     
