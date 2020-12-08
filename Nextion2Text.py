@@ -1266,7 +1266,7 @@ class Component:
         # The interpretation of any attribute can depend on other attributes. (see code below)
         dependencies = set(Component.attributes.keys())
         dependencies.add("model")
-        if self.rawData["att"]["type"] == 0 and includeVisuals:
+        if self.rawData["att"]["type"] == 122 and includeVisuals:
             print("gounf")
         for attName, attData in self.rawData["att"].items():
             if attName in customExclude:
@@ -1279,23 +1279,27 @@ class Component:
                 attProperties = copy.deepcopy(Component.attributes[attName])
                 done = False
                 while not done:
+                    print("nodo")
                     done = True
-                    for d in dependencies:
-                        if d in attProperties:
+                    keys = [k for k in attProperties.keys()]
+                    for d in keys:
+                        if d in dependencies:
                             done = False
-                            if d in self.rawData["att"] and (self.rawData["att"][d] in attProperties[d] or -1 in attProperties):
-                                try:
-                                    i = self.rawData["att"][d]
-                                except:
+                            if d in self.rawData["att"]:
+                                val = self.rawData["att"][d]
+                                foundVal = True
+                                if val in attProperties[d]:
+                                    i = val
+                                elif  -1 in attProperties[d]:
                                     i = -1
-                                while not type(attProperties[d][i]) is dict:
-                                    vOld = i
-                                    i = attProperties[d][i]
-                                    attProperties[d].pop(vOld)
-                                try:
+                                else:
+                                    foundVal = False
+                                if foundVal:
+                                    while not type(attProperties[d][i]) is dict:
+                                        vOld = i
+                                        i = attProperties[d][i]
+                                        attProperties[d].pop(vOld)
                                     attProperties.update(attProperties[d][i])
-                                except:
-                                    print("help")
                             attProperties.pop(d)
                 if  customInclude and attName not in customInclude:
                     attProperties["ignore"] = True
