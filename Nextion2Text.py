@@ -1,5 +1,4 @@
 from string import whitespace
-import os
 import sys
 from pathlib import Path
 import struct
@@ -1193,7 +1192,7 @@ class Component:
 
     def __repr__(self):
         repr = self.rawData["att"]["objname"]
-        data = self.parseRawProperties(customInclude={"type"}, inplace=False)
+        data = self.parseRawProperties(customInclude=("type",), inplace=False)
         if data and "Attributes" in data and Component.attributes["type"]["name"] in data["Attributes"]:
             repr = data["Attributes"][Component.attributes["type"]["name"]] + " " + repr
         return repr
@@ -1202,7 +1201,7 @@ class Component:
         return "".join(self.getTextLines(*args, **kwargs))
 
     def getTextLines(self, indentLevel=0, indent=4, emptyLinesLimit=1,
-                     customExclude={"type", "objname"}, **kwargs):
+                     customExclude=("type", "objname"), **kwargs):
         # Initialize resulting IndentList
         result = IndentList()
         result.indentStr = " "
@@ -1247,7 +1246,7 @@ class Component:
             result.appendIndentLine("")
         return result
 
-    def parseRawProperties(self, customInclude=set(), customExclude=set(),
+    def parseRawProperties(self, customInclude=tuple(), customExclude=tuple(),
                            includeVisuals:bool=False, includeUnknown:int=0,
                            inplace=True, emptyEvents=False, **kwargs):
 
