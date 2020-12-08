@@ -104,8 +104,8 @@ Button bMIDILive
         ID                               : 3
         Scope                            : local
         Send Component ID                : disabled
-        x coordinate                     : 238
-        y coordinate                     : 90
+        x coordinate                     : 15
+        y coordinate                     : 145
         Width                            : 208
         Height                           : 45
         Locked                           : no
@@ -131,8 +131,8 @@ Button bSettings
         ID                               : 4
         Scope                            : local
         Send Component ID                : disabled
-        x coordinate                     : 461
-        y coordinate                     : 90
+        x coordinate                     : 15
+        y coordinate                     : 200
         Width                            : 208
         Height                           : 45
         Locked                           : no

@@ -1188,7 +1188,7 @@ Text tus0
         Back. Color         : 65535
         Font Color          : 6900
         Horizontal Alignment: left
-        Vertical Alignment  : bottom
+        Vertical Alignment  : center
         Input Type          : character
         Text                : µs
         Max. Text Size      : 2
@@ -1213,7 +1213,7 @@ Text tHz0
         Back. Color         : 65535
         Font Color          : 6900
         Horizontal Alignment: left
-        Vertical Alignment  : bottom
+        Vertical Alignment  : center
         Input Type          : character
         Text                : Hz
         Max. Text Size      : 2
@@ -1238,7 +1238,7 @@ Text tPerc0
         Back. Color         : 65535
         Font Color          : 6900
         Horizontal Alignment: left
-        Vertical Alignment  : bottom
+        Vertical Alignment  : center
         Input Type          : character
         Text                : %
         Max. Text Size      : 1
@@ -1263,7 +1263,7 @@ Text tus1
         Back. Color         : 65535
         Font Color          : 6900
         Horizontal Alignment: left
-        Vertical Alignment  : bottom
+        Vertical Alignment  : center
         Input Type          : character
         Text                : µs
         Max. Text Size      : 2
@@ -1288,7 +1288,7 @@ Text tHz1
         Back. Color         : 65535
         Font Color          : 6900
         Horizontal Alignment: left
-        Vertical Alignment  : bottom
+        Vertical Alignment  : center
         Input Type          : character
         Text                : Hz
         Max. Text Size      : 2
@@ -1313,7 +1313,7 @@ Text tPerc1
         Back. Color         : 65535
         Font Color          : 6900
         Horizontal Alignment: left
-        Vertical Alignment  : bottom
+        Vertical Alignment  : center
         Input Type          : character
         Text                : %
         Max. Text Size      : 1
@@ -1338,7 +1338,7 @@ Text tus2
         Back. Color         : 65535
         Font Color          : 6900
         Horizontal Alignment: left
-        Vertical Alignment  : bottom
+        Vertical Alignment  : center
         Input Type          : character
         Text                : µs
         Max. Text Size      : 2
@@ -1363,7 +1363,7 @@ Text tHz2
         Back. Color         : 65535
         Font Color          : 6900
         Horizontal Alignment: left
-        Vertical Alignment  : bottom
+        Vertical Alignment  : center
         Input Type          : character
         Text                : Hz
         Max. Text Size      : 2
@@ -1388,7 +1388,7 @@ Text tPerc2
         Back. Color         : 65535
         Font Color          : 6900
         Horizontal Alignment: left
-        Vertical Alignment  : bottom
+        Vertical Alignment  : center
         Input Type          : character
         Text                : %
         Max. Text Size      : 1

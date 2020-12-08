@@ -1583,8 +1583,8 @@ Dual-state Button btPanDis
         Back. Picture ID (Pressed)       : 7
         Horizontal Alignment             : center
         Vertical Alignment               : center
-        State                            : pressed
-        Text                             : Disabled
+        State                            : unpressed
+        Text                             : Enabled
         Max. Text Size                   : 8
         Word wrap                        : disabled
         Horizontal Spacing               : 0

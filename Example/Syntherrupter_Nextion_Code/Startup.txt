@@ -95,7 +95,7 @@ Text tNxtFWVersion
         Horizontal Alignment: center
         Vertical Alignment  : center
         Input Type          : character
-        Text                : v3.1.0-beta.6
+        Text                : v3.1.0-beta.7
         Max. Text Size      : 20
         Word wrap           : disabled
         Horizontal Spacing  : 0

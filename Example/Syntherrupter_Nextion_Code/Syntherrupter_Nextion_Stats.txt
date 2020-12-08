@@ -10,6 +10,10 @@ USB_FW_Update
 	3    Component(s)
 	1    Line(s) of event code
 	1    Unique line(s) of event code
+Menu
+	7    Component(s)
+	14   Line(s) of event code
+	12   Unique line(s) of event code
 Startup
 	8    Component(s)
 	15   Line(s) of event code
@@ -18,10 +22,6 @@ Identification
 	16   Component(s)
 	141  Line(s) of event code
 	47   Unique line(s) of event code
-Menu
-	7    Component(s)
-	14   Line(s) of event code
-	12   Unique line(s) of event code
 Settings
 	8    Component(s)
 	22   Line(s) of event code
@@ -38,6 +38,10 @@ Simple
 	79   Component(s)
 	480  Line(s) of event code
 	263  Unique line(s) of event code
+MIDI_TC_Set
+	47   Component(s)
+	520  Line(s) of event code
+	275  Unique line(s) of event code
 MIDI_Live
 	71   Component(s)
 	460  Line(s) of event code
@@ -46,18 +50,14 @@ TC_Settings
 	82   Component(s)
 	772  Line(s) of event code
 	366  Unique line(s) of event code
-Keyboard
-	60   Component(s)
-	522  Line(s) of event code
-	205  Unique line(s) of event code
-MIDI_TC_Set
-	47   Component(s)
-	520  Line(s) of event code
-	275  Unique line(s) of event code
 User_Settings
 	67   Component(s)
 	470  Line(s) of event code
 	219  Unique line(s) of event code
+Keyboard
+	60   Component(s)
+	522  Line(s) of event code
+	205  Unique line(s) of event code
 
 Total
 	14   Page(s)
