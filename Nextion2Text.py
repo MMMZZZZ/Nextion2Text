@@ -1022,6 +1022,14 @@ class Component:
                 0: "no",
                 1: "yes",
             },
+            "type": {
+                -1: {
+                    "ignore": True,
+                },
+                121: {
+                    "ignore": False,
+                },
+            },
         },
         "groupid0": {
             "struct": "i",
