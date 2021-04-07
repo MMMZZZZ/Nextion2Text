@@ -4,14 +4,14 @@
 
 This script creates a text file for each page of your Nextion GUI, containing all components of the page, including their properties and the entire source code.
 
-This tool was mainly created to get meaningfull commit diffs (which is not possible with the binary HMI file) and to allow you to share *your* source code with other people as easily as developpers are used to. Binary files are simply impractical for developpment and sharing.
+This tool was mainly created to get meaningful commit diffs (which is not possible with the binary HMI file) and to allow you to share *your* source code with other people as easily as developers are used to. Binary files are simply impractical for development and sharing.
 
 This tool can NOT convert text back to a .HMI file. 
 
 ## Usage
 
 The script is written in Python, v3.8. No additional modules are required. 
-The script offers a couple options to customize its behavior and output. You can get a full description of all command line options with
+The script offers a couple of options to customize its behavior and output. You can get a full description of all command line options with
 
 ```python Nextion2Text.py -h```
 
