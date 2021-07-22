@@ -23,7 +23,9 @@ Note that by default, visual properties (x/y position, colors, pictures, fonts, 
 
 ## Features and Limitations
 
-Supports all Nextion components, including the Intelligent series components. 
+Known to work with files created with editor version 1.60.x and newer. May work with some 0.5x versions.
+
+Supports all Nextion components, including the Intelligent series components - except for thee new TouchCap component. 
 
 However, Intelligent series attributes are only partially supported by now. You can use the `--properties unknown` (See command line help for more details) option to include unknown attributes, too. 
 
