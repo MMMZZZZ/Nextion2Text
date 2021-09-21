@@ -1041,6 +1041,12 @@ class Component:
         },
         "ch": {
             "struct": "i",
+			"ignore": True,
+			"type":	{
+				0: {# Waveform
+					"ignore": False,
+				},
+			},
             "name": "Channel count",
         },
         "gdc": {
