@@ -15,6 +15,7 @@ import argparse
 import copy
 import json
 
+projectEncodingName = "ansi"
 
 class IndentList(list):
     def __init__(self, *args, **kwargs):
@@ -1334,7 +1335,7 @@ class Component:
                 if not attName in customInclude:
                     attName = "UNKNOWN " + attName
                 if len(attData) > 4 or includeUnknown == 2:#raw
-                    attData = attData.decode("ansi")
+                    attData = attData.decode(projectEncodingName)
                 elif includeUnknown == 3:#hex
                     attData = " ".join([hex(d)[2:] for d in attData])
                 elif len(attData) <= 4:
@@ -1383,7 +1384,7 @@ class Component:
             name, length = properties[index].rsplit(b"-", 1)
             length = int(length)
             index += 1
-            self.rawData[name.decode("ansi")] = properties[index : index + length]
+            self.rawData[name.decode(projectEncodingName)] = properties[index : index + length]
             index += length
         for k, v in self.rawData.items():
             if k == "att":
@@ -1392,7 +1393,7 @@ class Component:
                 rawAttributes = dict()
                 for att in v:
                     # Basic name, data separation and interpretation
-                    attName = att[:16].rstrip(b"\x00").decode("ansi")
+                    attName = att[:16].rstrip(b"\x00").decode(projectEncodingName)
                     attData = att[16:]
                     if attName in self.attributes:
                         if "i" in self.attributes[attName]["struct"]:
@@ -1401,12 +1402,12 @@ class Component:
                                 val = (val << 8) + b
                             attData = val
                         else:
-                            attData = attData.decode("ansi")
+                            attData = attData.decode(projectEncodingName)
                     rawAttributes[attName] = attData
                 self.rawData["att"] = rawAttributes
             else:
                 # code lines
-                eventCode = (b"\n".join(v)).decode("ansi")
+                eventCode = (b"\n".join(v)).decode(projectEncodingName)
                 self.rawData[k] = eventCode
 
 class Header:
@@ -1458,7 +1459,7 @@ class PageHeader(Header):
         self.password     = data[4]
         self.locked       = data[5]
         self.fileVersion  = data[7]
-        self.name         = data[9].decode("ansi").rstrip("\x00")
+        self.name         = data[9].decode(projectEncodingName).rstrip("\x00")
         index = self._headerStart + self.headerSize
         for i in range(self.count):
             obj = PageContentHeader(self._raw, index)
@@ -1474,7 +1475,7 @@ class HMIContentHeader(Header):
         self.start   : int
         self.size    : int
         self.deleted : bool
-        self.name    = data[0].decode("ansi").rstrip("\x00")
+        self.name    = data[0].decode(projectEncodingName).rstrip("\x00")
         self.start   = data[1]
         self.size    = data[2]
         self.deleted = data[3]
@@ -1625,10 +1626,10 @@ class HMI:
             if obj.isPage():
                 self.pages.append(Page(self.raw, obj.start, obj.size, self.modelSeries))
             elif obj.name == "Program.s":
-                self.programS = self.raw[obj.start : obj.start + obj.size].decode("ansi")
+                self.programS = self.raw[obj.start : obj.start + obj.size].decode(projectEncodingName)
             """
             end = obj.start + len(obj)
-            s = self.raw[obj.start:end].decode("ansi")
+            s = self.raw[obj.start:end].decode(projectEncodingName)
             comp = component(s)
             if comp.typeStr == "Page":
                 self.pages.append(comp)
