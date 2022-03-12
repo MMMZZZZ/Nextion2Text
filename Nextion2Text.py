@@ -99,6 +99,7 @@ class Component:
                 65:  "File Browser",
                 109: "Hotspot",
                 51:  "Timer",
+		5:   "TouchCap",
                 -1: "Unknown",
             },
             "type": {
