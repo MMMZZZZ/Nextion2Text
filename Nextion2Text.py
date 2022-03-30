@@ -1658,6 +1658,17 @@ def getCodeLines(rawLines, removeIndent=False, removeComments=True):
         eventLines = [l for l in eventLines if not l.lstrip(" ").startswith("//")]
     return eventLines
 
+
+def dict_recursive_update(source: dict, target: dict) -> dict:
+    for sk, sv in source.items():
+        if sk in target and isinstance(target[sk], dict):
+            target[sk] = dict_recursive_update(sv, target[sk])
+        else:
+            target[sk] = sv
+    return target
+
+
+
 if __name__ == '__main__':
     desc = """Get a readable text version of a Nextion HMI file. 
               Developped by Max Zuidberg, licensed under MPL-2.0"""
@@ -1705,6 +1716,11 @@ if __name__ == '__main__':
                              "the custom dictionaries. Note: If you only want to replace one of both build-in "
                              "dictionaries, you can do so by only including that one in your file. You do not need to "
                              "include both.")
+    parser.add_argument("-r", "--custom_recursive", action="store_true",
+                        help="Optional Flag. Requires -c. By default the build-in dictionaries are _updated_ with the "
+                             "key/value pairs from the custom dictionaries. This means that the values from the "
+                             "custom dictionary overwrite those of the built-in dictionary at the top level. If you "
+                             "want to merge both together over all levels, then add this flag.")
     args = parser.parse_args()
 
     hmiFile = Path(args.input_hmi)
@@ -1737,6 +1753,8 @@ if __name__ == '__main__':
             try:
                 if args.custom_exclusive:
                     Component.attributes = custom.attributes
+                elif args.custom_recursive:
+                    Component.attributes = dict_recursive_update(custom.attributes, Component.attributes)
                 else:
                     Component.attributes.update(custom.attributes)
             except:
@@ -1744,6 +1762,8 @@ if __name__ == '__main__':
             try:
                 if args.custom_exclusive:
                     Component.codeEvents = custom.codeEvents
+                elif args.custom_recursive:
+                    Component.codeEvents = dict_recursive_update(custom.codeEvents, Component.codeEvents)
                 else:
                     Component.codeEvents.update(custom.codeEvents)
             except:
