@@ -15,6 +15,16 @@ import argparse
 import copy
 import json
 
+def decodeText(txt):
+    decoded = txt.decode("iso-8859-1")
+    result = ""
+    for i in range(len(decoded)):
+        if decoded[i]!='\r' and decoded[i]!='\n' and decoded[i]!='\t' and (ord(decoded[i])<32 or ord(decoded[i])>127):
+            result += "\\x{:02x}".format(ord(decoded[i]))
+        else:
+            result += decoded[i]
+
+    return result
 
 class IndentList(list):
     def __init__(self, *args, **kwargs):
@@ -62,6 +72,7 @@ class Component:
         "codesunload":  "Page Exit Event",
         "codestimer":   "Timer Event",
         "codesplayend": "Play Complete Event",
+        "codesslide":   "Touch Move Event",
     }
     attributes = {
         "type": {
@@ -99,7 +110,7 @@ class Component:
                 65:  "File Browser",
                 109: "Hotspot",
                 51:  "Timer",
-		5:   "TouchCap",
+		        5:   "TouchCap",
                 -1: "Unknown",
             },
             "type": {
@@ -1335,7 +1346,7 @@ class Component:
                 if not attName in customInclude:
                     attName = "UNKNOWN " + attName
                 if len(attData) > 4 or includeUnknown == 2:#raw
-                    attData = attData.decode("ansi")
+                    attData = decodeText(attData)
                 elif includeUnknown == 3:#hex
                     attData = " ".join([hex(d)[2:] for d in attData])
                 elif len(attData) <= 4:
@@ -1384,7 +1395,7 @@ class Component:
             name, length = properties[index].rsplit(b"-", 1)
             length = int(length)
             index += 1
-            self.rawData[name.decode("ansi")] = properties[index : index + length]
+            self.rawData[name.decode("iso-8859-1")] = properties[index : index + length]
             index += length
         for k, v in self.rawData.items():
             if k == "att":
@@ -1393,7 +1404,7 @@ class Component:
                 rawAttributes = dict()
                 for att in v:
                     # Basic name, data separation and interpretation
-                    attName = att[:16].rstrip(b"\x00").decode("ansi")
+                    attName = att[:16].rstrip(b"\x00").decode("iso-8859-1")
                     attData = att[16:]
                     if attName in self.attributes:
                         if "i" in self.attributes[attName]["struct"]:
@@ -1402,12 +1413,12 @@ class Component:
                                 val = (val << 8) + b
                             attData = val
                         else:
-                            attData = attData.decode("ansi")
+                            attData = decodeText(attData)
                     rawAttributes[attName] = attData
                 self.rawData["att"] = rawAttributes
             else:
                 # code lines
-                eventCode = (b"\n".join(v)).decode("ansi")
+                eventCode = decodeText(b"\n".join(v))
                 self.rawData[k] = eventCode
 
 class Header:
@@ -1459,7 +1470,7 @@ class PageHeader(Header):
         self.password     = data[4]
         self.locked       = data[5]
         self.fileVersion  = data[7]
-        self.name         = data[9].decode("ansi").rstrip("\x00")
+        self.name         = data[9].decode('iso-8859-1').rstrip("\x00")
         index = self._headerStart + self.headerSize
         for i in range(self.count):
             obj = PageContentHeader(self._raw, index)
@@ -1475,7 +1486,7 @@ class HMIContentHeader(Header):
         self.start   : int
         self.size    : int
         self.deleted : bool
-        self.name    = data[0].decode("ansi").rstrip("\x00")
+        self.name    = data[0].decode('iso-8859-1').rstrip("\x00")
         self.start   = data[1]
         self.size    = data[2]
         self.deleted = data[3]
@@ -1629,10 +1640,10 @@ class HMI:
             if obj.isPage():
                 self.pages.append(Page(self.raw, obj.start, obj.size, self.modelSeries))
             elif obj.name == "Program.s":
-                self.programS = self.raw[obj.start : obj.start + obj.size].decode("ansi")
+                self.programS = decodeText(self.raw[obj.start : obj.start + obj.size])
             """
             end = obj.start + len(obj)
-            s = self.raw[obj.start:end].decode("ansi")
+            s = decodeText(self.raw[obj.start:end])
             comp = component(s)
             if comp.typeStr == "Page":
                 self.pages.append(comp)
