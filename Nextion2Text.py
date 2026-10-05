@@ -1615,6 +1615,7 @@ class HMI:
         self.header = HMIHeader(self.raw)
         self.pages = []
         self.programS = ""
+        self.macros = []
         # Parse "main.HMI" first, then the other structures
         for obj in self.header.content:
             if obj.name == "main.HMI":
@@ -1630,6 +1631,9 @@ class HMI:
                 self.pages.append(Page(self.raw, obj.start, obj.size, self.modelSeries))
             elif obj.name == "Program.s":
                 self.programS = self.raw[obj.start : obj.start + obj.size].decode("ansi")
+            elif obj.name == "comcode.sn":
+                # Macros, added in Nextion Editor v1.68.2
+                self.macros = self.parseMacros(self.raw[obj.start : obj.start + obj.size].decode("ansi"))
             """
             end = obj.start + len(obj)
             s = self.raw[obj.start:end].decode("ansi")
@@ -1639,6 +1643,33 @@ class HMI:
             else:
                 self.pages[-1].components.append(comp)
             """
+
+    @staticmethod
+    def parseMacros(text):
+        """Split the macros entry into a list of (name, code lines) tuples.
+
+        Each macro is stored as its name, its number of code lines, then that
+        many code lines, all CRLF-terminated.
+        """
+        # Split on CRLF only: splitlines() would also break on characters such
+        # as U+0085, which non-ASCII glyphs in strings can decode to.
+        lines = text.split("\r\n")
+        macros = []
+        index = 0
+        while index < len(lines):
+            name = lines[index]
+            if not name:
+                index += 1
+                continue
+            if index + 1 >= len(lines) or not lines[index + 1].isdigit():
+                raise Exception("Macro '{}' has no valid line count".format(name))
+            start = index + 2
+            end = start + int(lines[index + 1])
+            if end > len(lines):
+                raise Exception("Macro '{}' is truncated".format(name))
+            macros.append((name, lines[start:end]))
+            index = end
+        return macros
 
 
 ### Here starts the script part.
@@ -1816,6 +1847,24 @@ if __name__ == '__main__':
     if args.json:
         with open(jsonFolder / Path("Program.s" + ".json"), "w") as f:
             json.dump({"Program.s": hmi.programS}, f, indent=4)
+    if hmi.macros:
+        macrosName = "Macros"
+        if macrosName in [page.components[0].rawData["att"]["objname"] for page in hmi.pages]:
+            macrosName = "Macros.s"
+            print("A page is named \"Macros\". Writing the macros to " + macrosName + hmiTextFileExt + " instead.")
+        macrosText = [macrosName]
+        macrosCode = []
+        for macroName, macroLines in hmi.macros:
+            macrosText.append("    Macro " + macroName)
+            macrosText.extend([("        " + l) if l else "" for l in macroLines])
+            macrosText.append("")
+            macrosCode.extend(macroLines)
+        texts[macrosName] = "\n".join(macrosText).rstrip("\n") + "\n"
+        codeLines[macrosName] = getCodeLines(macrosCode)
+        compCount[macrosName] = 0
+        if args.json:
+            with open(jsonFolder / Path(macrosName + ".json"), "w") as f:
+                json.dump({macrosName: dict((n, "\n".join(l)) for n, l in hmi.macros)}, f, indent=4)
     for page in hmi.pages:
         name = page.components[0].rawData["att"]["objname"]#str(page)
         text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown,

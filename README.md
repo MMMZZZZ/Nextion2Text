@@ -29,6 +29,8 @@ Supports all Nextion components, including the Intelligent series components - e
 
 However, Intelligent series attributes are only partially supported by now. You can use the `--properties unknown` (See command line help for more details) option to include unknown attributes, too. 
 
+Macros (named global events, added in editor version 1.68.2) are written to `Macros.txt`, next to `Program.s.txt`. If a page is named `Macros`, they are written to `Macros.s.txt` instead.
+
 ## Example
 
 The [Example folder](/Example) contains a HMI file, a subfolder with the resultung text files, and a `.cmd` file that has been executed to generate the text files. In addition, here are some interesting commits you may want to look at: 
